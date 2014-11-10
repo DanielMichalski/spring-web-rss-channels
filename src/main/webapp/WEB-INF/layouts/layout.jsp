@@ -2,7 +2,6 @@
 <%@ taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles" %>
 <%@ taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +12,7 @@
     <title><tiles:getAsString name="title"/></title>
 </head>
 <body>
-
 <tilesx:useAttribute name="current"/>
-
 <div class="container">
 
     <!-- Static navbar -->
@@ -35,14 +32,13 @@
                 <ul class="nav navbar-nav">
                     <li class="${current == 'index' ? 'active' : ''}"><a href='<spring:url value="/"/>'>Home</a></li>
                     <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Users</a>
+                    <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-
     <tiles:insertAttribute name="body"/>
-
     <tiles:insertAttribute name="footer"/>
 </div>
 

@@ -13,4 +13,7 @@ public interface UserService {
 
     User findOne(Long id);
 
+    User findOneWithBlogs(Long id);
+
+    void save(User user);
 }
