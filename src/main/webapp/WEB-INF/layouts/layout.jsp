@@ -33,6 +33,8 @@
                     <li class="${current == 'index' ? 'active' : ''}"><a href='<spring:url value="/"/>'>Home</a></li>
                     <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/users"/>">Users</a>
                     <li class="${current == 'register' ? 'active' : ''}"><a href="<spring:url value="/register"/>">Register</a>
+                    <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a>
+                    <li><a href="<spring:url value="/logout"/>">Logout</a>
                     </li>
                 </ul>
             </div>
