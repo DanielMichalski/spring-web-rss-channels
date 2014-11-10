@@ -15,5 +15,7 @@ public interface UserService {
 
     User findOneWithBlogs(Long id);
 
+    User findOneWithBlogs(String name);
+
     void save(User user);
 }

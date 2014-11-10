@@ -6,10 +6,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
     <title><tiles:getAsString name="title"/></title>
 </head>
 <body>
@@ -40,6 +41,7 @@
                         <li class="${current == 'login' ? 'active' : ''}"><a href="<spring:url value="/login"/>">Login</a></li>
                     </security:authorize>
                     <security:authorize access="isAuthenticated()">
+                        <li class="${current == 'users' ? 'active' : ''}"><a href="<spring:url value="/account"/>">My account</a>
                          <li><a href="<spring:url value="/logout"/>">Logout</a></li>
                     </security:authorize>
                 </ul>
@@ -47,8 +49,7 @@
         </div>
     </nav>
     <tiles:insertAttribute name="body"/>
-    <tiles:insertAttribute name="footer"/>
 </div>
-
+    <tiles:insertAttribute name="footer"/>
 </body>
 </html>

@@ -7,4 +7,7 @@ import pl.dmichalski.agregator.entity.User;
  * Author: Daniel
  */
 public interface UserRepository extends JpaRepository<User, Long> {
+
+    User findByName(String name);
+
 }
