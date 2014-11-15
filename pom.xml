@@ -10,6 +10,8 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
+    <name>Spring web blogs</name>
+
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
         <spring-security.version>3.2.5.RELEASE</spring-security.version>
@@ -132,6 +134,12 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+            </plugin>
+
             <plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>

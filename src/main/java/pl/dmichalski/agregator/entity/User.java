@@ -25,7 +25,7 @@ public class User {
     @JoinTable
     private List<Role> roles;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.REMOVE)
     private List<Blog> blogs;
 
     public Long getId() {

@@ -18,4 +18,6 @@ public interface UserService {
     User findOneWithBlogs(String name);
 
     void save(User user);
+
+    void remove(Long id);
 }

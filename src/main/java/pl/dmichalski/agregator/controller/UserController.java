@@ -1,6 +1,5 @@
 package pl.dmichalski.agregator.controller;
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -64,6 +63,19 @@ public class UserController {
         String name = principal.getName();
         blogService.save(blog, name);
         return "redirect:/account";
+    }
+
+    @RequestMapping(value = "/blog/remove/{id}")
+    public String removeBlog(@PathVariable Long id) {
+        Blog blog = blogService.findOne(id);
+        blogService.delete(blog);
+        return "redirect:/account";
+    }
+
+    @RequestMapping("/users/remove/{id}")
+    public String removeUser(@PathVariable Long id) {
+        userService.remove(id);
+        return "redirect:/users";
     }
 
 }
