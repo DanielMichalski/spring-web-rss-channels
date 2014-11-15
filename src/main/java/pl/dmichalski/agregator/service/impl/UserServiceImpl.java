@@ -49,6 +49,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    public User findOne(String username) {
+        return userRepository.findByName(username);
+    }
+
+    @Override
     public User findOneWithBlogs(Long id) {
         User user = findOne(id);
         List<Blog> blogs = blogRepository.findByUser(user);

@@ -9,9 +9,11 @@ import java.util.List;
  */
 public interface UserService {
 
-    public List<User> findAll();
+    List<User> findAll();
 
     User findOne(Long id);
+
+    User findOne(String username);
 
     User findOneWithBlogs(Long id);
 
@@ -20,4 +22,5 @@ public interface UserService {
     void save(User user);
 
     void remove(Long id);
+
 }
