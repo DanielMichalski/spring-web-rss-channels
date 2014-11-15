@@ -14,10 +14,10 @@
 
     <mvc:annotation-driven/>
 
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-        <property name="definitions">
-            <value>/WEB-INF/defs/general.xml</value>
-        </property>
+        <property name="definitions" value="/WEB-INF/definitions/general.xml"/>
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">

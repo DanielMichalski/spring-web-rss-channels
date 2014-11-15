@@ -60,21 +60,21 @@ public class InitDbService {
 
         Blog blog = new Blog();
         blog.setName("Blog name");
-        blog.setUrl("Excample url");
+        blog.setUrl("http://test.org");
         blog.setUser(userAdmin);
         blogRepository.save(blog);
 
         Item item1 = new Item();
         item1.setBlog(blog);
         item1.setTitle("first");
-        item1.setLink("Some link");
+        item1.setLink("http://test.org");
         item1.setPublishedDate(new Date());
         itemRepository.save(item1);
 
         Item item2 = new Item();
         item2.setBlog(blog);
         item2.setTitle("second");
-        item2.setLink("Some link");
+        item2.setLink("http://test.org");
         item2.setPublishedDate(new Date());
         itemRepository.save(item2);
     }

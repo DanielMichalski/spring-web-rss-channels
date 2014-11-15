@@ -5,48 +5,6 @@
 
 <h1>${user.name}</h1>
 
-<!-- Button trigger modal -->
-<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-    New blog
-</button>
-
-<form:form commandName="blog" cssClass="form-horizontal">
-    <!-- Modal -->
-    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">New blog</h4>
-                </div>
-                <div class="modal-body">
-
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">Name:</label>
-
-                        <div class="col-sm-10">
-                            <form:input path="name" cssClass="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="name" class="col-sm-2 control-label">URL:</label>
-
-                        <div class="col-sm-10">
-                            <form:input path="url" cssClass="form-control"/>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <input type="submit" class="btn btn-primary" value="Save"/>
-                </div>
-            </div>
-        </div>
-    </div>
-</form:form>
-
-
 <br/><br/>
 
 <script type="text/javascript">
@@ -97,7 +55,6 @@
         </div>
     </c:forEach>
 </div>
-
 
 <!-- Modal -->
 <div class="modal fade" id="modalRemove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

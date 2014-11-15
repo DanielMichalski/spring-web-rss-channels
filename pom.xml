@@ -17,6 +17,7 @@
         <spring-security.version>3.2.5.RELEASE</spring-security.version>
         <spring-data-jpa.version>1.7.0.RELEASE</spring-data-jpa.version>
         <hibernate.version>4.3.6.Final</hibernate.version>
+        <hibernate-validator.version>5.1.2.Final</hibernate-validator.version>
         <apache.tiles.version>3.0.5</apache.tiles.version>
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
@@ -71,6 +72,13 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>${hibernate.version}</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+
 
         <dependency>
             <groupId>org.hsqldb</groupId>
