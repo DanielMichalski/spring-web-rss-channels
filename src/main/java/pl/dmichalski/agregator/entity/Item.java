@@ -13,8 +13,11 @@ public class Item {
     @GeneratedValue
     private Long id;
 
+    @Column(length = 1000)
     private String title;
 
+    @Lob
+    @Column(length = 10000)
     private String description;
 
     @Column(name = "published_date")

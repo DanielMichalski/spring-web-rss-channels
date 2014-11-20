@@ -6,10 +6,15 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.dmichalski.agregator.entity.Blog;
+import pl.dmichalski.agregator.entity.Item;
 import pl.dmichalski.agregator.entity.User;
+import pl.dmichalski.agregator.exception.RSSException;
 import pl.dmichalski.agregator.repository.BlogRepository;
+import pl.dmichalski.agregator.repository.ItemRepository;
 import pl.dmichalski.agregator.repository.UserRepository;
 import pl.dmichalski.agregator.service.BlogService;
+
+import java.util.List;
 
 /**
  * Author: Daniel
@@ -24,11 +29,34 @@ public class BlogServiceImpl implements BlogService {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private ItemRepository itemRepository;
+
+    @Autowired
+    private RssService rssService;
+
     @Override
     public void save(Blog blog, String name) {
         User user = userRepository.findByName(name);
         blog.setUser(user);
         blogRepository.save(blog);
+        saveItems(blog);
+    }
+
+    @Override
+    public void saveItems(Blog blog) {
+        try {
+            List<Item> items = rssService.getItems(blog.getUrl());
+            for (Item item : items) {
+                Item savedItem = itemRepository.findByBlogAndLink(blog, item.getLink());
+                if (savedItem == null) {
+                    item.setBlog(blog);
+                    itemRepository.save(item);
+                }
+            }
+        } catch (RSSException e) {
+            e.printStackTrace();
+        }
     }
 
     @Override

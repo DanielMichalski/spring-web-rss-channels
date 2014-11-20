@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmichalski.agregator.entity.Blog;
-import pl.dmichalski.agregator.entity.User;
 import pl.dmichalski.agregator.service.BlogService;
 import pl.dmichalski.agregator.service.UserService;
 

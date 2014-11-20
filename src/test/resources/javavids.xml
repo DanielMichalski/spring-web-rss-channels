@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/rss2full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?>
+<rss xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0" version="2.0">
+    <channel>
+        <title>JavaVids: Java video tutorials</title>
+        <description>This free online video tutorial in English on YouTube is a collection of Java video tutorials.
+        </description>
+        <link>http://www.javavids.com/</link>
+        <lastBuildDate>Sun, 22 Jun 2014 20:35:49 +0000</lastBuildDate>
+        <pubDate>Sun, 22 Jun 2014 20:35:49 +0000</pubDate>
+        <ttl>1800</ttl>
+        <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/rss+xml"
+                     href="http://feeds.feedburner.com/javavids"/>
+        <feedburner:info uri="javavids"/>
+        <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/"/>
+        <item>
+            <title>How to solve Source not found error during debug in Eclipse</title>
+            <description>If you run your web application using embedded Java EE server in Maven (like Tomcat or Jetty)
+                and try to run it in debug mode, once you hit some breakpoint, you will encounter this error: "Source
+                not found".&lt;img src="http://feeds.feedburner.com/~r/javavids/~4/CJQ8y5pkbzc" height="1" width="1"/&gt;</description>
+            <link>
+                http://feedproxy.google.com/~r/javavids/~3/CJQ8y5pkbzc/how-to-solve-source-not-found-error-during-debug-in-eclipse.html
+            </link>
+            <pubDate>Sun, 22 Jun 2014 20:35:49 +0000</pubDate>
+            <feedburner:origLink>
+                http://www.javavids.com/video/how-to-solve-source-not-found-error-during-debug-in-eclipse.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>JAXB: Access Restriction Warning</title>
+            <description>How to solve "Access restriction: The type JAXBContext is not accessible due to restriction on
+                required library"?&lt;img src="http://feeds.feedburner.com/~r/javavids/~4/7eCZuCuzZjk" height="1"
+                width="1"/&gt;</description>
+            <link>http://feedproxy.google.com/~r/javavids/~3/7eCZuCuzZjk/jaxb-access-restriction-warning.html</link>
+            <pubDate>Mon, 16 Jun 2014 20:59:43 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/jaxb-access-restriction-warning.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>JAXB and OutOfMemoryError</title>
+            <description>How to solve two common reasons for OutOfMemoryError, which you may encounter using JAXB.&lt;img
+                src="http://feeds.feedburner.com/~r/javavids/~4/BK11W7qISDY" height="1" width="1"/&gt;</description>
+            <link>http://feedproxy.google.com/~r/javavids/~3/BK11W7qISDY/jaxb-and-outofmemoryerror.html</link>
+            <pubDate>Mon, 16 Jun 2014 20:57:04 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/jaxb-and-outofmemoryerror.html</feedburner:origLink>
+        </item>
+        <item>
+            <title>Creating JAXB classes from scratch</title>
+            <description>If you have XSD file, the easiest way how to create JAXB classes is to generate them. If you
+                don't have XSD, you can just simply write them from scratch.&lt;img
+                src="http://feeds.feedburner.com/~r/javavids/~4/XDMM12z2VSw" height="1" width="1"/&gt;</description>
+            <link>http://feedproxy.google.com/~r/javavids/~3/XDMM12z2VSw/creating-jaxb-classes-from-scratch.html</link>
+            <pubDate>Mon, 16 Jun 2014 20:50:58 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/creating-jaxb-classes-from-scratch.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Generating JAXB classes with Maven plugin</title>
+            <description>How to generate JAXB classes based on XSD file automatically using Maven?&lt;img
+                src="http://feeds.feedburner.com/~r/javavids/~4/_-pio89kfMk" height="1" width="1"/&gt;</description>
+            <link>
+                http://feedproxy.google.com/~r/javavids/~3/_-pio89kfMk/generating-jaxb-classes-with-maven-plugin.html
+            </link>
+            <pubDate>Mon, 16 Jun 2014 20:43:19 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/generating-jaxb-classes-with-maven-plugin.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Generating JAXB classes in Eclipse from XSD</title>
+            <description>How to easily generate JAXB classes in Eclipse?&lt;img
+                src="http://feeds.feedburner.com/~r/javavids/~4/a6bYlvt9edo" height="1" width="1"/&gt;</description>
+            <link>
+                http://feedproxy.google.com/~r/javavids/~3/a6bYlvt9edo/generating-jaxb-classes-in-eclipse-from-xsd.html
+            </link>
+            <pubDate>Mon, 16 Jun 2014 20:40:56 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/generating-jaxb-classes-in-eclipse-from-xsd.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Spring web app tutorial 51: Spring Profiles and PostgreSQL DB</title>
+            <description>How to use Spring Profiles to distinguish between development and production environment. How
+                to use Heroku PostgreSQL database. This is the last video in "Java blog aggregator" series.&lt;img
+                src="http://feeds.feedburner.com/~r/javavids/~4/crY6txP17e8" height="1" width="1"/&gt;</description>
+            <link>
+                http://feedproxy.google.com/~r/javavids/~3/crY6txP17e8/spring-web-app-tutorial-51-spring-profiles-postgresql-db.html
+            </link>
+            <pubDate>Thu, 24 Apr 2014 13:27:49 +0000</pubDate>
+            <feedburner:origLink>
+                http://www.javavids.com/video/spring-web-app-tutorial-51-spring-profiles-postgresql-db.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Spring web app tutorial 50: Heroku</title>
+            <description>How to upload your WAR file to Heroku and have your web. application up and running on your
+                custom domain.&lt;img src="http://feeds.feedburner.com/~r/javavids/~4/jn3U4ZQSNsM" height="1" width="1"/&gt;</description>
+            <link>http://feedproxy.google.com/~r/javavids/~3/jn3U4ZQSNsM/spring-web-app-tutorial-50-heroku.html</link>
+            <pubDate>Thu, 24 Apr 2014 13:26:36 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/spring-web-app-tutorial-50-heroku.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Spring web app tutorial 49: maven package</title>
+            <description>How to create WAR file in Eclipse using Maven package.&lt;img
+                src="http://feeds.feedburner.com/~r/javavids/~4/qZ-NIc8GIyM" height="1" width="1"/&gt;</description>
+            <link>http://feedproxy.google.com/~r/javavids/~3/qZ-NIc8GIyM/spring-web-app-tutorial-49-maven-package.html
+            </link>
+            <pubDate>Thu, 24 Apr 2014 13:25:58 +0000</pubDate>
+            <feedburner:origLink>http://www.javavids.com/video/spring-web-app-tutorial-49-maven-package.html
+            </feedburner:origLink>
+        </item>
+        <item>
+            <title>Spring web app tutorial 48: Java blog aggregator homepage</title>
+            <description>Creating Java blog aggregator homepage with items from database ordered by published date in
+                descending order.&lt;img src="http://feeds.feedburner.com/~r/javavids/~4/96hVAaLGYQM" height="1"
+                width="1"/&gt;</description>
+            <link>
+                http://feedproxy.google.com/~r/javavids/~3/96hVAaLGYQM/spring-web-app-tutorial-48-java-blog-aggregator-homepage.html
+            </link>
+            <pubDate>Wed, 23 Apr 2014 19:00:37 +0000</pubDate>
+            <feedburner:origLink>
+                http://www.javavids.com/video/spring-web-app-tutorial-48-java-blog-aggregator-homepage.html
+            </feedburner:origLink>
+        </item>
+    </channel>
+</rss>

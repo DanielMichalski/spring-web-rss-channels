@@ -18,6 +18,7 @@ public class Blog {
 
     @URL(message = "Invalid URL!")
     @Size(min = 1, message = "Invalid URL!")
+    @Column(length = 1000)
     private String url;
 
     @Size(min = 1, message = "Name must be at least 1 character!")

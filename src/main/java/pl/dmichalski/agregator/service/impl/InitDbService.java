@@ -8,10 +8,12 @@ import pl.dmichalski.agregator.entity.Blog;
 import pl.dmichalski.agregator.entity.Item;
 import pl.dmichalski.agregator.entity.Role;
 import pl.dmichalski.agregator.entity.User;
+import pl.dmichalski.agregator.exception.RSSException;
 import pl.dmichalski.agregator.repository.BlogRepository;
 import pl.dmichalski.agregator.repository.ItemRepository;
 import pl.dmichalski.agregator.repository.RoleRepository;
 import pl.dmichalski.agregator.repository.UserRepository;
+import pl.dmichalski.agregator.service.BlogService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -35,10 +37,13 @@ public class InitDbService {
     private BlogRepository blogRepository;
 
     @Autowired
-    private ItemRepository itemRepository;
+    private RssService rssService;
+
+    @Autowired
+    private BlogService blogService;
 
     @PostConstruct
-    public void init() {
+    public void init() throws RSSException {
         Role roleUser = new Role();
         roleUser.setName("ROLE_USER");
         roleRepository.save(roleUser);
@@ -60,23 +65,13 @@ public class InitDbService {
 
         Blog blog = new Blog();
         blog.setName("Blog name");
-        blog.setUrl("http://test.org");
+        blog.setUrl("http://feeds.feedburner.com/javavids?format=xml");
         blog.setUser(userAdmin);
         blogRepository.save(blog);
 
-        Item item1 = new Item();
-        item1.setBlog(blog);
-        item1.setTitle("first");
-        item1.setLink("http://test.org");
-        item1.setPublishedDate(new Date());
-        itemRepository.save(item1);
-
-        Item item2 = new Item();
-        item2.setBlog(blog);
-        item2.setTitle("second");
-        item2.setLink("http://test.org");
-        item2.setPublishedDate(new Date());
-        itemRepository.save(item2);
+        List<Item> items = rssService.getItems(blog.getUrl());
+        blog.setItems(items);
+        blogService.saveItems(blog);
     }
 
 }
