@@ -49,9 +49,9 @@
 <br/><br/>
 
 <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
         $('.nav-tabs a:first').tab('show'); // Select first tab
-        $(".triggerRemove").click(function(e) {
+        $(".triggerRemove").click(function (e) {
             e.preventDefault();
             $("#modalRemove .removeBtn").attr("href", $(this).attr("href"));
             $("#modalRemove").modal();
@@ -60,18 +60,18 @@
                 {
                     rules: {
                         name: {
-                            required : true,
-                            minlength : 1
+                            required: true,
+                            minlength: 1
                         },
                         url: {
-                            required : true,
+                            required: true,
                             url: true
                         }
                     },
-                    highlight: function(element) {
+                    highlight: function (element) {
                         $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
                     },
-                    unhighlight: function(element) {
+                    unhighlight: function (element) {
                         $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
                     }
                 }
@@ -114,7 +114,7 @@
                                 </a>
                             </strong>
                             <br/>
-                            ${item.description}
+                                ${item.description}
                         </td>
                     </tr>
                 </c:forEach>
@@ -130,7 +130,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
                 <h4 class="modal-title">RemoveBlog</h4>
             </div>
             <div class="modal-body">

@@ -57,11 +57,11 @@
                         name: {
                             required: true,
                             minlength: 3,
-                            remote :  {
+                            remote: {
                                 url: "<spring:url value='/register/available' />",
                                 type: "get",
-                                data : {
-                                    username: function(){
+                                data: {
+                                    username: function () {
                                         return $("#name").val();
                                     }
                                 }
@@ -81,10 +81,10 @@
                             equalTo: "#password"
                         }
                     },
-                    highlight: function(element) {
+                    highlight: function (element) {
                         $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
                     },
-                    unhighlight: function(element) {
+                    unhighlight: function (element) {
                         $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
                     },
                     messages: {

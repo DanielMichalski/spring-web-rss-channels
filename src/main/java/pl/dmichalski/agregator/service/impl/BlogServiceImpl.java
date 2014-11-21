@@ -1,6 +1,7 @@
 package pl.dmichalski.agregator.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,7 @@ import pl.dmichalski.agregator.repository.UserRepository;
 import pl.dmichalski.agregator.service.BlogService;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 /**
  * Author: Daniel
@@ -56,6 +58,14 @@ public class BlogServiceImpl implements BlogService {
             }
         } catch (RSSException e) {
             e.printStackTrace();
+        }
+    }
+
+    @Scheduled(fixedDelay = 3600000)
+    public void reloadBlogs() {
+        List<Blog> blogs = blogRepository.findAll();
+        for (Blog blog : blogs) {
+            saveItems(blog);
         }
     }
 

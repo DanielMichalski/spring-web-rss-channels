@@ -11,6 +11,8 @@ public interface BlogService {
 
     void saveItems(Blog blog);
 
+    void reloadBlogs();
+
     Blog findOne(Long id);
 
     void delete(Blog blog);

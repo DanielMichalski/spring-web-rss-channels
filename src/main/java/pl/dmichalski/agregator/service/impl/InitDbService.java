@@ -10,14 +10,12 @@ import pl.dmichalski.agregator.entity.Role;
 import pl.dmichalski.agregator.entity.User;
 import pl.dmichalski.agregator.exception.RSSException;
 import pl.dmichalski.agregator.repository.BlogRepository;
-import pl.dmichalski.agregator.repository.ItemRepository;
 import pl.dmichalski.agregator.repository.RoleRepository;
 import pl.dmichalski.agregator.repository.UserRepository;
 import pl.dmichalski.agregator.service.BlogService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -42,6 +40,8 @@ public class InitDbService {
     @Autowired
     private BlogService blogService;
 
+    private User userAdmin;
+
     @PostConstruct
     public void init() throws RSSException {
         Role roleUser = new Role();
@@ -52,7 +52,7 @@ public class InitDbService {
         roleAdmin.setName("ROLE_ADMIN");
         roleRepository.save(roleAdmin);
 
-        User userAdmin = new User();
+        userAdmin = new User();
         userAdmin.setEnabled(true);
         userAdmin.setName("admin");
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
@@ -63,12 +63,27 @@ public class InitDbService {
         userAdmin.setRoles(roles);
         userRepository.save(userAdmin);
 
+        Blog blog1 = saveBlog("Java Vids", "http://feeds.feedburner.com/javavids?format=xml");
+        Blog blog2 = saveBlog("Tomcat", "http://www.tomcatexpert.com/blog/feed");
+        Blog blog3 = saveBlog("Eclipse source", "http://eclipsesource.com/blogs/author/irbull/feed/");
+        Blog blog4 = saveBlog("Java world core", "http://www.javaworld.com/category/core-java/index.rss");
+
+        saveItems(blog1);
+        saveItems(blog2);
+        saveItems(blog3);
+        saveItems(blog4);
+    }
+
+    private Blog saveBlog(String name, String url) {
         Blog blog = new Blog();
-        blog.setName("Blog name");
-        blog.setUrl("http://feeds.feedburner.com/javavids?format=xml");
+        blog.setName(name);
+        blog.setUrl(url);
         blog.setUser(userAdmin);
         blogRepository.save(blog);
+        return blog;
+    }
 
+    private void saveItems(Blog blog) throws RSSException {
         List<Item> items = rssService.getItems(blog.getUrl());
         blog.setItems(items);
         blogService.saveItems(blog);

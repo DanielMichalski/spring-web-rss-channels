@@ -10,7 +10,7 @@
 <script type="text/javascript">
     $(document).ready(function () {
         $('.nav-tabs a:first').tab('show'); // Select first tab
-        $('.triggerRemove').click(function(e){
+        $('.triggerRemove').click(function (e) {
             e.preventDefault();
             $("#modalRemove .removeBtn").attr("href", $(this).attr("href"));
             $("#modalRemove").modal();
@@ -61,7 +61,8 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
+                        class="sr-only">Close</span></button>
                 <h4 class="modal-title">RemoveBlog</h4>
             </div>
             <div class="modal-body">
