@@ -63,10 +63,10 @@ public class InitDbService {
         userAdmin.setRoles(roles);
         userRepository.save(userAdmin);
 
-        Blog blog1 = saveBlog("Java Vids", "http://feeds.feedburner.com/javavids?format=xml");
-        Blog blog2 = saveBlog("Tomcat", "http://www.tomcatexpert.com/blog/feed");
-        Blog blog3 = saveBlog("Eclipse source", "http://eclipsesource.com/blogs/author/irbull/feed/");
-        Blog blog4 = saveBlog("Java world core", "http://www.javaworld.com/category/core-java/index.rss");
+        Blog blog1 = saveBlog("TVN Najnowsze", "http://www.tvn24.pl/najnowsze.xml");
+        Blog blog2 = saveBlog("TVN Najważniejsze", "http://www.tvn24.pl/najwazniejsze.xml");
+        Blog blog3 = saveBlog("TVN Świat", "http://www.tvn24.pl/wiadomosci-ze-swiata,2.xml");
+        Blog blog4 = saveBlog("TVN Sport", "http://sport.tvn24.pl/sport,81,m.xml");
 
         saveItems(blog1);
         saveItems(blog2);
