@@ -80,14 +80,14 @@
 </script>
 <!-- Nav tabs -->
 <ul class="nav nav-tabs">
-    <c:forEach items="${user.blogs}" var="blog">
+    <c:forEach items="${user.blogEntities}" var="blog">
         <li><a href="#blog_${blog.id}" data-toggle="tab">${blog.name}</a></li>
     </c:forEach>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
-    <c:forEach items="${user.blogs}" var="blog">
+    <c:forEach items="${user.blogEntities}" var="blog">
         <div class="tab-pane" id="blog_${blog.id}">
             <h1>${blog.name}</h1>
 
@@ -104,7 +104,7 @@
                 </tr>
                 </thead>
                 <tbody>
-                <c:forEach items="${blog.items}" var="item">
+                <c:forEach items="${blog.itemEntities}" var="item">
                     <tr>
                         <td>${item.publishedDate}</td>
                         <td>

@@ -4,9 +4,9 @@
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
 
-<form:form commandName="user" cssClass="form-horizonal form-register">
+<form:form commandName="aUser" cssClass="form-horizonal form-register">
     <div class="form-register">
-        <c:if test="${param.success eq true}">
+        <c:if test="${param.registered eq true}">
             <div class="alert alert-success">Registration successfull!</div>
         </c:if>
 
@@ -58,7 +58,7 @@
                             required: true,
                             minlength: 3,
                             remote: {
-                                url: "<spring:url value='/register/available' />",
+                                url: "<spring:url value='/register/is-available' />",
                                 type: "get",
                                 data: {
                                     username: function () {

@@ -10,14 +10,14 @@
                http://www.springframework.org/schema/mvc
                http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
-    <context:component-scan base-package="pl.dmichalski.agregator.controller"/>
+    <context:component-scan base-package="pl.dmichalski.rss.controller"/>
 
     <mvc:annotation-driven/>
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-        <property name="definitions" value="/WEB-INF/definitions/general.xml"/>
+        <property name="definitions" value="/WEB-INF/definitions/general_definition.xml"/>
     </bean>
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">

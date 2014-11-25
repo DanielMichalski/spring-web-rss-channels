@@ -10,12 +10,20 @@
                http://www.springframework.org/schema/task
                http://www.springframework.org/schema/task/spring-task.xsd">
 
-    <context:component-scan base-package="pl.dmichalski.agregator">
+    <context:component-scan base-package="pl.dmichalski.rss">
         <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
 
     <context:property-placeholder location="classpath:properties/texts.properties"/>
 
     <task:annotation-driven/>
+
+    <beans profile="dev">
+        <import resource="classpath:spring/store/spring-data-dev.xml"/>
+    </beans>
+
+    <beans profile="prod">
+        <import resource="classpath:spring/store/spring-data-prod.xml"/>
+    </beans>
 
 </beans>

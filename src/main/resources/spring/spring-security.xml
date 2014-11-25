@@ -9,8 +9,8 @@
     <global-method-security pre-post-annotations="enabled"/>
 
     <http use-expressions="true">
-        <intercept-url pattern="/users**" access="hasRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/users/**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/admin**" access="hasRole('ROLE_ADMIN')" />
+        <intercept-url pattern="/admin/**" access="hasRole('ROLE_ADMIN')" />
         <intercept-url pattern="/account/**" access="hasRole('ROLE_USER')" />
         <form-login login-page="/login" />
         <logout logout-url="/logout"/>
@@ -20,11 +20,11 @@
         <authentication-provider>
             <password-encoder hash="bcrypt" />
             <jdbc-user-service data-source-ref="dataSource"
-                authorities-by-username-query="SELECT user.name, role.name FROM user
-                    JOIN user_role on user.id = user_role.users_id
-                    JOIN role on user_role.roles_id = role.id
-                    WHERE user.name = ?"
-                users-by-username-query="SELECT name,password,enabled FROM user WHERE name = ?"/>
+                authorities-by-username-query="SELECT web_user.name, web_user_role.name FROM web_user
+                    JOIN web_user_x_web_user_role on web_user.id = web_user_x_web_user_role.userEntities_id
+                    JOIN web_user_role on web_user_x_web_user_role.roleEntities_id = web_user_role.id
+                    WHERE web_user.name = ?"
+                users-by-username-query="SELECT name,password,enabled FROM web_user WHERE name = ?"/>
         </authentication-provider>
     </authentication-manager>
 
