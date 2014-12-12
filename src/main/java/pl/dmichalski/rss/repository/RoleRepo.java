@@ -1,13 +1,13 @@
 package pl.dmichalski.rss.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.dmichalski.rss.entity.RoleEntity;
+import pl.dmichalski.rss.entity.UserRoleEntity;
 
 /**
  * Author: Daniel
  */
-public interface RoleRepo extends JpaRepository<RoleEntity, Long> {
+public interface RoleRepo extends JpaRepository<UserRoleEntity, Long> {
 
-    RoleEntity findByName(String name);
+    UserRoleEntity findByName(String name);
 
 }

@@ -33,8 +33,8 @@ public class UserEntity {
     private boolean enabled;
 
     @ManyToMany
-    @JoinTable(name = "web_user_x_web_user_role")
-    private List<RoleEntity> roleEntities;
+    @JoinTable(name = "web_user_x_user_role")
+    private List<UserRoleEntity> roleEntities;
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.REMOVE)
     private List<BlogEntity> blogEntities;
@@ -71,11 +71,11 @@ public class UserEntity {
         this.password = password;
     }
 
-    public List<RoleEntity> getRoleEntities() {
+    public List<UserRoleEntity> getRoleEntities() {
         return roleEntities;
     }
 
-    public void setRoleEntities(List<RoleEntity> roleEntities) {
+    public void setRoleEntities(List<UserRoleEntity> roleEntities) {
         this.roleEntities = roleEntities;
     }
 

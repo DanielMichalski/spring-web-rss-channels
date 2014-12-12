@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.dmichalski.rss.entity.BlogEntity;
 import pl.dmichalski.rss.entity.BlogEntryEntity;
-import pl.dmichalski.rss.entity.RoleEntity;
+import pl.dmichalski.rss.entity.UserRoleEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.repository.BlogRepo;
 import pl.dmichalski.rss.repository.ItemRepo;
@@ -78,7 +78,7 @@ public class UserService implements IUserService {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         userEntity.setPassword(encoder.encode(userEntity.getPassword()));
 
-        List<RoleEntity> roleEntities = new ArrayList<>();
+        List<UserRoleEntity> roleEntities = new ArrayList<>();
         roleEntities.add(roleRepo.findByName("ROLE_USER"));
         userEntity.setRoleEntities(roleEntities);
 

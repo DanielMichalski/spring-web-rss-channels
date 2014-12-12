@@ -20,9 +20,9 @@
         <authentication-provider>
             <password-encoder hash="bcrypt" />
             <jdbc-user-service data-source-ref="dataSource"
-                authorities-by-username-query="SELECT web_user.name, web_user_role.name FROM web_user
-                    JOIN web_user_x_web_user_role on web_user.id = web_user_x_web_user_role.userEntities_id
-                    JOIN web_user_role on web_user_x_web_user_role.roleEntities_id = web_user_role.id
+                authorities-by-username-query="SELECT web_user.name, user_role.name FROM web_user
+                    JOIN web_user_x_user_role on web_user.id = web_user_x_user_role.userEntities_id
+                    JOIN user_role on web_user_x_user_role.roleEntities_id = user_role.id
                     WHERE web_user.name = ?"
                 users-by-username-query="SELECT name,password,enabled FROM web_user WHERE name = ?"/>
         </authentication-provider>

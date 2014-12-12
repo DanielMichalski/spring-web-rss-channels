@@ -7,8 +7,8 @@ import java.util.List;
  * Author: Daniel
  */
 @Entity
-@Table(name = "web_user_role")
-public class RoleEntity {
+@Table(name = "user_role")
+public class UserRoleEntity {
 
     @Id
     @GeneratedValue

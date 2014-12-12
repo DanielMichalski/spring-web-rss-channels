@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import pl.dmichalski.rss.entity.BlogEntity;
 import pl.dmichalski.rss.entity.BlogEntryEntity;
-import pl.dmichalski.rss.entity.RoleEntity;
+import pl.dmichalski.rss.entity.UserRoleEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.exception.RSSException;
 import pl.dmichalski.rss.repository.BlogRepo;
@@ -46,22 +46,22 @@ public class InitDbService {
     public void init() throws RSSException {
         if (roleRepo.findByName("ROLE_ADMIN") != null)  return;
 
-        RoleEntity roleEntityUser = new RoleEntity();
-        roleEntityUser.setName("ROLE_USER");
-        roleRepo.save(roleEntityUser);
+        UserRoleEntity userRoleEntityUser = new UserRoleEntity();
+        userRoleEntityUser.setName("ROLE_USER");
+        roleRepo.save(userRoleEntityUser);
 
-        RoleEntity roleEntityAdmin = new RoleEntity();
-        roleEntityAdmin.setName("ROLE_ADMIN");
-        roleRepo.save(roleEntityAdmin);
+        UserRoleEntity userRoleEntityAdmin = new UserRoleEntity();
+        userRoleEntityAdmin.setName("ROLE_ADMIN");
+        roleRepo.save(userRoleEntityAdmin);
 
         userEntityAdmin = new UserEntity();
         userEntityAdmin.setEnabled(true);
         userEntityAdmin.setName("admin");
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         userEntityAdmin.setPassword(encoder.encode("admin"));
-        List<RoleEntity> roleEntities = new ArrayList<>();
-        roleEntities.add(roleEntityAdmin);
-        roleEntities.add(roleEntityUser);
+        List<UserRoleEntity> roleEntities = new ArrayList<>();
+        roleEntities.add(userRoleEntityAdmin);
+        roleEntities.add(userRoleEntityUser);
         userEntityAdmin.setRoleEntities(roleEntities);
         userRepo.save(userEntityAdmin);
 
