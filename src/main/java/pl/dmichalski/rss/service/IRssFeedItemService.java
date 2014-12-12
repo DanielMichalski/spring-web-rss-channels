@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Author: Daniel
  */
-public interface IItemService {
+public interface IRssFeedItemService {
 
     public List<RssFeedEntryEntity> findAll();
 

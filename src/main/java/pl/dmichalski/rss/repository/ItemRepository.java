@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Author: Daniel
  */
-public interface ItemRepo extends JpaRepository<RssFeedEntryEntity, Long> {
+public interface ItemRepository extends JpaRepository<RssFeedEntryEntity, Long> {
 
     List<RssFeedEntryEntity> findByRssFeedEntity(RssFeedEntity rssFeedEntity, Pageable pageable);
 

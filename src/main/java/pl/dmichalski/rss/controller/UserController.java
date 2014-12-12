@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmichalski.rss.entity.RssFeedEntity;
-import pl.dmichalski.rss.service.IBlogService;
+import pl.dmichalski.rss.service.IRssFeedService;
 import pl.dmichalski.rss.service.IUserService;
 
 import javax.validation.Valid;
@@ -25,7 +25,7 @@ public class UserController {
     private IUserService userService;
 
     @Autowired
-    private IBlogService blogService;
+    private IRssFeedService blogService;
 
     @RequestMapping("/account")
     public String account(Model model, Principal principal) {

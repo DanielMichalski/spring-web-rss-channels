@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Author: Daniel
  */
-public interface BlogRepo extends JpaRepository<RssFeedEntity, Long> {
+public interface BlogRepository extends JpaRepository<RssFeedEntity, Long> {
 
     List<RssFeedEntity> findByUserEntity(UserEntity userEntity);
 

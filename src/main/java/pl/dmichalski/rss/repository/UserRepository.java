@@ -6,7 +6,7 @@ import pl.dmichalski.rss.entity.UserEntity;
 /**
  * Author: Daniel
  */
-public interface UserRepo extends JpaRepository<UserEntity, Long> {
+public interface UserRepository extends JpaRepository<UserEntity, Long> {
 
     UserEntity findByName(String name);
 

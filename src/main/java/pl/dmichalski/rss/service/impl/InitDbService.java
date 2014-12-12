@@ -9,10 +9,10 @@ import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.entity.UserRoleEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.exception.RSSException;
-import pl.dmichalski.rss.repository.BlogRepo;
-import pl.dmichalski.rss.repository.RoleRepo;
-import pl.dmichalski.rss.repository.UserRepo;
-import pl.dmichalski.rss.service.IBlogService;
+import pl.dmichalski.rss.repository.BlogRepository;
+import pl.dmichalski.rss.repository.RoleRepository;
+import pl.dmichalski.rss.repository.UserRepository;
+import pl.dmichalski.rss.service.IRssFeedService;
 
 import javax.annotation.PostConstruct;
 import java.util.ArrayList;
@@ -26,33 +26,33 @@ import java.util.List;
 public class InitDbService {
 
     @Autowired
-    private RoleRepo roleRepo;
+    private RoleRepository roleRepository;
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Autowired
-    private BlogRepo blogRepo;
+    private BlogRepository blogRepository;
 
     @Autowired
     private RssService rssService;
 
     @Autowired
-    private IBlogService blogService;
+    private IRssFeedService blogService;
 
     private UserEntity userEntityAdmin;
 
     @PostConstruct
     public void init() throws RSSException {
-        if (roleRepo.findByName("ROLE_ADMIN") != null)  return;
+        if (roleRepository.findByName("ROLE_ADMIN") != null)  return;
 
         UserRoleEntity userRoleEntityUser = new UserRoleEntity();
         userRoleEntityUser.setName("ROLE_USER");
-        roleRepo.save(userRoleEntityUser);
+        roleRepository.save(userRoleEntityUser);
 
         UserRoleEntity userRoleEntityAdmin = new UserRoleEntity();
         userRoleEntityAdmin.setName("ROLE_ADMIN");
-        roleRepo.save(userRoleEntityAdmin);
+        roleRepository.save(userRoleEntityAdmin);
 
         userEntityAdmin = new UserEntity();
         userEntityAdmin.setEnabled(true);
@@ -63,7 +63,7 @@ public class InitDbService {
         roleEntities.add(userRoleEntityAdmin);
         roleEntities.add(userRoleEntityUser);
         userEntityAdmin.setRoleEntities(roleEntities);
-        userRepo.save(userEntityAdmin);
+        userRepository.save(userEntityAdmin);
 
         RssFeedEntity rssFeedEntity1 = saveBlog("TVN Najnowsze", "http://www.tvn24.pl/najnowsze.xml");
         RssFeedEntity rssFeedEntity2 = saveBlog("TVN Najważniejsze", "http://www.tvn24.pl/najwazniejsze.xml");
@@ -82,7 +82,7 @@ public class InitDbService {
         rssFeedEntity.setName(name);
         rssFeedEntity.setUrl(url);
         rssFeedEntity.setUserEntity(userEntityAdmin);
-        blogRepo.save(rssFeedEntity);
+        blogRepository.save(rssFeedEntity);
         return rssFeedEntity;
     }
 

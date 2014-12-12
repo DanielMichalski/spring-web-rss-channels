@@ -11,10 +11,10 @@ import pl.dmichalski.rss.entity.RssFeedEntity;
 import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.exception.RSSException;
-import pl.dmichalski.rss.repository.BlogRepo;
-import pl.dmichalski.rss.repository.ItemRepo;
-import pl.dmichalski.rss.repository.UserRepo;
-import pl.dmichalski.rss.service.IBlogService;
+import pl.dmichalski.rss.repository.BlogRepository;
+import pl.dmichalski.rss.repository.ItemRepository;
+import pl.dmichalski.rss.repository.UserRepository;
+import pl.dmichalski.rss.service.IRssFeedService;
 import pl.dmichalski.rss.util.log.AutowiredLogger;
 
 import java.util.List;
@@ -24,28 +24,28 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class BlogService implements IBlogService {
+public class RssFeedService implements IRssFeedService {
 
     @AutowiredLogger
     private Logger logger;
 
     @Autowired
-    private BlogRepo blogRepo;
+    private BlogRepository blogRepository;
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Autowired
-    private ItemRepo itemRepo;
+    private ItemRepository itemRepository;
 
     @Autowired
     private RssService rssService;
 
     @Override
     public void save(RssFeedEntity rssFeedEntity, String name) {
-        UserEntity userEntity = userRepo.findByName(name);
+        UserEntity userEntity = userRepository.findByName(name);
         rssFeedEntity.setUserEntity(userEntity);
-        blogRepo.save(rssFeedEntity);
+        blogRepository.save(rssFeedEntity);
         saveAll(rssFeedEntity);
     }
 
@@ -54,10 +54,10 @@ public class BlogService implements IBlogService {
         try {
             List<RssFeedEntryEntity> itemEntities = rssService.getItems(rssFeedEntity.getUrl());
             for (RssFeedEntryEntity rssFeedEntryEntity : itemEntities) {
-                RssFeedEntryEntity savedRssFeedEntryEntity = itemRepo.findByRssFeedEntityAndLink(rssFeedEntity, rssFeedEntryEntity.getLink());
+                RssFeedEntryEntity savedRssFeedEntryEntity = itemRepository.findByRssFeedEntityAndLink(rssFeedEntity, rssFeedEntryEntity.getLink());
                 if (savedRssFeedEntryEntity == null) {
                     rssFeedEntryEntity.setRssFeedEntity(rssFeedEntity);
-                    itemRepo.save(rssFeedEntryEntity);
+                    itemRepository.save(rssFeedEntryEntity);
                 }
             }
         } catch (RSSException e) {
@@ -67,19 +67,19 @@ public class BlogService implements IBlogService {
 
     @Scheduled(fixedDelay = 3600000)
     public void reloadBlogs() {
-        List<RssFeedEntity> blogs = blogRepo.findAll();
+        List<RssFeedEntity> blogs = blogRepository.findAll();
         blogs.stream().forEach(this::saveAll);
     }
 
     @Override
     public RssFeedEntity findOne(Long id) {
-        return blogRepo.findOne(id);
+        return blogRepository.findOne(id);
     }
 
     @Override
     @PreAuthorize("#blog.userEntity.name == authentication.name or hasRole('ROLE_ADMIN')")
     public void delete(@P("blog") RssFeedEntity rssFeedEntity) {
-        blogRepo.delete(rssFeedEntity);
+        blogRepository.delete(rssFeedEntity);
     }
 }
 

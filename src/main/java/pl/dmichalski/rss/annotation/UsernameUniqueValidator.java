@@ -1,7 +1,7 @@
 package pl.dmichalski.rss.annotation;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import pl.dmichalski.rss.repository.UserRepo;
+import pl.dmichalski.rss.repository.UserRepository;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
@@ -12,7 +12,7 @@ import javax.validation.ConstraintValidatorContext;
 public class UsernameUniqueValidator implements ConstraintValidator<UsernameUnique, String> {
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Override
     public void initialize(UsernameUnique constraintAnnotation) {
@@ -21,10 +21,10 @@ public class UsernameUniqueValidator implements ConstraintValidator<UsernameUniq
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext context) {
-        if (userRepo == null) {
+        if (userRepository == null) {
             return true;
         }
-        return userRepo.findByName(username) == null;
+        return userRepository.findByName(username) == null;
     }
 
 }

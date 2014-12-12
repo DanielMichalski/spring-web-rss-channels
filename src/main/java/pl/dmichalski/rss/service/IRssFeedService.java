@@ -5,7 +5,7 @@ import pl.dmichalski.rss.entity.RssFeedEntity;
 /**
  * Author: Daniel
  */
-public interface IBlogService {
+public interface IRssFeedService {
 
     void save(RssFeedEntity rssFeedEntity, String name);
 

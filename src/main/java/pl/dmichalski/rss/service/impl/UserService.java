@@ -10,10 +10,10 @@ import pl.dmichalski.rss.entity.RssFeedEntity;
 import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.entity.UserRoleEntity;
 import pl.dmichalski.rss.entity.UserEntity;
-import pl.dmichalski.rss.repository.BlogRepo;
-import pl.dmichalski.rss.repository.ItemRepo;
-import pl.dmichalski.rss.repository.RoleRepo;
-import pl.dmichalski.rss.repository.UserRepo;
+import pl.dmichalski.rss.repository.BlogRepository;
+import pl.dmichalski.rss.repository.ItemRepository;
+import pl.dmichalski.rss.repository.RoleRepository;
+import pl.dmichalski.rss.repository.UserRepository;
 import pl.dmichalski.rss.service.IUserService;
 
 import java.util.ArrayList;
@@ -27,39 +27,39 @@ import java.util.List;
 public class UserService implements IUserService {
 
     @Autowired
-    private UserRepo userRepo;
+    private UserRepository userRepository;
 
     @Autowired
-    private BlogRepo blogRepo;
+    private BlogRepository blogRepository;
 
     @Autowired
-    private ItemRepo itemRepo;
+    private ItemRepository itemRepository;
 
     @Autowired
-    private RoleRepo roleRepo;
+    private RoleRepository roleRepository;
 
     @Override
     public List<UserEntity> findAll(){
-        return userRepo.findAll();
+        return userRepository.findAll();
     }
 
     @Override
     public UserEntity findOne(Long id) {
-        return userRepo.findOne(id);
+        return userRepository.findOne(id);
     }
 
     @Override
     public UserEntity findOne(String username) {
-        return userRepo.findByName(username);
+        return userRepository.findByName(username);
     }
 
     @Override
     public UserEntity findOneWithAllBlogs(Long id) {
         UserEntity userEntity = findOne(id);
-        List<RssFeedEntity> blogEntities = blogRepo.findByUserEntity(userEntity);
+        List<RssFeedEntity> blogEntities = blogRepository.findByUserEntity(userEntity);
         for (RssFeedEntity rssFeedEntity : blogEntities) {
             PageRequest publishedDate = new PageRequest(0, 10, Sort.Direction.DESC, "publishedDate");
-            List<RssFeedEntryEntity> itemEntities = itemRepo.findByRssFeedEntity(rssFeedEntity, publishedDate);
+            List<RssFeedEntryEntity> itemEntities = itemRepository.findByRssFeedEntity(rssFeedEntity, publishedDate);
             rssFeedEntity.setItemEntities(itemEntities);
         }
         userEntity.setBlogEntities(blogEntities);
@@ -68,7 +68,7 @@ public class UserService implements IUserService {
 
     @Override
     public UserEntity findOneWithAllBlogs(String name) {
-        UserEntity userEntity = userRepo.findByName(name);
+        UserEntity userEntity = userRepository.findByName(name);
         return findOneWithAllBlogs(userEntity.getId());
     }
 
@@ -79,14 +79,14 @@ public class UserService implements IUserService {
         userEntity.setPassword(encoder.encode(userEntity.getPassword()));
 
         List<UserRoleEntity> roleEntities = new ArrayList<>();
-        roleEntities.add(roleRepo.findByName("ROLE_USER"));
+        roleEntities.add(roleRepository.findByName("ROLE_USER"));
         userEntity.setRoleEntities(roleEntities);
 
-        userRepo.save(userEntity);
+        userRepository.save(userEntity);
     }
 
     @Override
     public void removeUser(Long id) {
-        userRepo.delete(id);
+        userRepository.delete(id);
     }
 }
