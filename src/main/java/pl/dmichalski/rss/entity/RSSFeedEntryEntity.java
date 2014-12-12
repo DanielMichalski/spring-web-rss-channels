@@ -7,7 +7,7 @@ import java.util.Date;
  * Author: Daniel
  */
 @Entity
-public class RSSFeedEntryEntity {
+public class RssFeedEntryEntity {
 
     @Id
     @GeneratedValue
@@ -26,7 +26,7 @@ public class RSSFeedEntryEntity {
     private String link;
 
     @ManyToOne
-    private RSSFeedEntity rssFeedEntity;
+    private RssFeedEntity rssFeedEntity;
 
     public Long getId() {
         return id;
@@ -68,11 +68,11 @@ public class RSSFeedEntryEntity {
         this.link = link;
     }
 
-    public RSSFeedEntity getRSSFeedEntity() {
+    public RssFeedEntity getRssFeedEntity() {
         return rssFeedEntity;
     }
 
-    public void setRSSFeedEntity(RSSFeedEntity RSSFeedEntity) {
-        this.rssFeedEntity = RSSFeedEntity;
+    public void setRssFeedEntity(RssFeedEntity rssFeedEntity) {
+        this.rssFeedEntity = rssFeedEntity;
     }
 }

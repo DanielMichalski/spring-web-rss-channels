@@ -2,18 +2,18 @@ package pl.dmichalski.rss.repository;
 
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import pl.dmichalski.rss.entity.BlogEntity;
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 
 import java.util.List;
 
 /**
  * Author: Daniel
  */
-public interface ItemRepo extends JpaRepository<BlogEntryEntity, Long> {
+public interface ItemRepo extends JpaRepository<RssFeedEntryEntity, Long> {
 
-    List<BlogEntryEntity> findByBlogEntity(BlogEntity blogEntity, Pageable pageable);
+    List<RssFeedEntryEntity> findByRssFeedEntity(RssFeedEntity rssFeedEntity, Pageable pageable);
 
-    BlogEntryEntity findByBlogEntityAndLink(BlogEntity blogEntity, String link);
+    RssFeedEntryEntity findByRssFeedEntityAndLink(RssFeedEntity rssFeedEntity, String link);
 
 }

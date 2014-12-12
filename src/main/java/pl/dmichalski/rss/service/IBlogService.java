@@ -1,19 +1,19 @@
 package pl.dmichalski.rss.service;
 
-import pl.dmichalski.rss.entity.BlogEntity;
+import pl.dmichalski.rss.entity.RssFeedEntity;
 
 /**
  * Author: Daniel
  */
 public interface IBlogService {
 
-    void save(BlogEntity blogEntity, String name);
+    void save(RssFeedEntity rssFeedEntity, String name);
 
-    void saveAll(BlogEntity blogEntity);
+    void saveAll(RssFeedEntity rssFeedEntity);
 
     void reloadBlogs();
 
-    BlogEntity findOne(Long id);
+    RssFeedEntity findOne(Long id);
 
-    void delete(BlogEntity blogEntity);
+    void delete(RssFeedEntity rssFeedEntity);
 }

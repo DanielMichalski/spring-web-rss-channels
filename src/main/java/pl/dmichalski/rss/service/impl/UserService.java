@@ -6,8 +6,8 @@ import org.springframework.data.domain.Sort;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmichalski.rss.entity.BlogEntity;
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.entity.UserRoleEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.repository.BlogRepo;
@@ -56,11 +56,11 @@ public class UserService implements IUserService {
     @Override
     public UserEntity findOneWithAllBlogs(Long id) {
         UserEntity userEntity = findOne(id);
-        List<BlogEntity> blogEntities = blogRepo.findByUserEntity(userEntity);
-        for (BlogEntity blogEntity : blogEntities) {
+        List<RssFeedEntity> blogEntities = blogRepo.findByUserEntity(userEntity);
+        for (RssFeedEntity rssFeedEntity : blogEntities) {
             PageRequest publishedDate = new PageRequest(0, 10, Sort.Direction.DESC, "publishedDate");
-            List<BlogEntryEntity> itemEntities = itemRepo.findByBlogEntity(blogEntity, publishedDate);
-            blogEntity.setItemEntities(itemEntities);
+            List<RssFeedEntryEntity> itemEntities = itemRepo.findByRssFeedEntity(rssFeedEntity, publishedDate);
+            rssFeedEntity.setItemEntities(itemEntities);
         }
         userEntity.setBlogEntities(blogEntities);
         return userEntity;

@@ -11,7 +11,7 @@ import java.util.List;
  */
 @Entity
 @Table
-public class BlogEntity {
+public class RssFeedEntity {
 
     @Id
     @GeneratedValue
@@ -29,8 +29,8 @@ public class BlogEntity {
     @JoinColumn(name = "user_id")
     private UserEntity userEntity;
 
-    @OneToMany(mappedBy = "blogEntity", cascade = CascadeType.REMOVE)
-    private List<BlogEntryEntity> itemEntities;
+    @OneToMany(mappedBy = "rssFeedEntity", cascade = CascadeType.REMOVE)
+    private List<RssFeedEntryEntity> itemEntities;
 
     public Long getId() {
         return id;
@@ -64,11 +64,11 @@ public class BlogEntity {
         this.userEntity = userEntity;
     }
 
-    public List<BlogEntryEntity> getItemEntities() {
+    public List<RssFeedEntryEntity> getItemEntities() {
         return itemEntities;
     }
 
-    public void setItemEntities(List<BlogEntryEntity> itemEntities) {
+    public void setItemEntities(List<RssFeedEntryEntity> itemEntities) {
         this.itemEntities = itemEntities;
     }
 }

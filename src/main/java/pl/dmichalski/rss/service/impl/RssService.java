@@ -1,7 +1,7 @@
 package pl.dmichalski.rss.service.impl;
 
 import org.springframework.stereotype.Service;
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.exception.RSSException;
 import pl.dmichalski.rss.rss.ObjectFactory;
 import pl.dmichalski.rss.rss.TRss;
@@ -28,8 +28,8 @@ import java.util.List;
 @Service
 public class RssService implements IRssService{
 
-    private List<BlogEntryEntity> getItems(Source source) throws RSSException {
-        List<BlogEntryEntity> list = new ArrayList<>();
+    private List<RssFeedEntryEntity> getItems(Source source) throws RSSException {
+        List<RssFeedEntryEntity> list = new ArrayList<>();
 
         try {
             JAXBContext jaxbContext = JAXBContext.newInstance(ObjectFactory.class);
@@ -41,13 +41,13 @@ public class RssService implements IRssService{
             for (TRssChannel chanel : channel) {
                 List<TRssItem> items = chanel.getItem();
                 for (TRssItem rssItem : items) {
-                    BlogEntryEntity blogEntryEntity = new BlogEntryEntity();
-                    blogEntryEntity.setTitle(rssItem.getTitle());
-                    blogEntryEntity.setDescription(rssItem.getDescription());
-                    blogEntryEntity.setLink(rssItem.getLink());
+                    RssFeedEntryEntity rssFeedEntryEntity = new RssFeedEntryEntity();
+                    rssFeedEntryEntity.setTitle(rssItem.getTitle());
+                    rssFeedEntryEntity.setDescription(rssItem.getDescription());
+                    rssFeedEntryEntity.setLink(rssItem.getLink());
                     Date pubDate = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z").parse(rssItem.getPubDate());
-                    blogEntryEntity.setPublishedDate(pubDate);
-                    list.add(blogEntryEntity);
+                    rssFeedEntryEntity.setPublishedDate(pubDate);
+                    list.add(rssFeedEntryEntity);
                 }
             }
 
@@ -58,11 +58,11 @@ public class RssService implements IRssService{
         return list;
     }
 
-    public List<BlogEntryEntity> getItems(File file) throws RSSException {
+    public List<RssFeedEntryEntity> getItems(File file) throws RSSException {
         return getItems(new StreamSource(file));
     }
 
-    public List<BlogEntryEntity> getItems(String url) throws RSSException {
+    public List<RssFeedEntryEntity> getItems(String url) throws RSSException {
         return getItems(new StreamSource(url));
     }
 

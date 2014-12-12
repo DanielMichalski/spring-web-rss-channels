@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.repository.ItemRepo;
 import pl.dmichalski.rss.service.IItemService;
 
@@ -19,7 +19,7 @@ public class ItemService implements IItemService {
     @Autowired
     private ItemRepo itemRepo;
 
-    public List<BlogEntryEntity> findAll() {
+    public List<RssFeedEntryEntity> findAll() {
         PageRequest pageRequest = new PageRequest(0, 20, Sort.Direction.DESC, "publishedDate");
         return itemRepo.findAll(pageRequest).getContent();
     }

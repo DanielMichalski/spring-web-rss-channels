@@ -15,7 +15,7 @@
     <c:forEach items="${items}" var="item">
         <tr>
             <td class="col-md-1">
-                <c:out value="${item.blogEntity.name}"/>
+                <c:out value="${item.rssFeedEntity.name}"/>
             </td>
             <td class="col-md-1">
                 <c:out value="${item.publishedDate}"/>

@@ -1,6 +1,6 @@
 package pl.dmichalski.rss.service;
 
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.exception.RSSException;
 
 import java.io.File;
@@ -11,8 +11,8 @@ import java.util.List;
  */
 public interface IRssService {
 
-    List<BlogEntryEntity> getItems(File file) throws RSSException;
+    List<RssFeedEntryEntity> getItems(File file) throws RSSException;
 
-    List<BlogEntryEntity> getItems(String url) throws RSSException;
+    List<RssFeedEntryEntity> getItems(String url) throws RSSException;
 
 }

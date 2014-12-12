@@ -4,8 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmichalski.rss.entity.BlogEntity;
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.entity.UserRoleEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.exception.RSSException;
@@ -65,31 +65,31 @@ public class InitDbService {
         userEntityAdmin.setRoleEntities(roleEntities);
         userRepo.save(userEntityAdmin);
 
-        BlogEntity blogEntity1 = saveBlog("TVN Najnowsze", "http://www.tvn24.pl/najnowsze.xml");
-        BlogEntity blogEntity2 = saveBlog("TVN Najważniejsze", "http://www.tvn24.pl/najwazniejsze.xml");
-        BlogEntity blogEntity3 = saveBlog("TVN Świat", "http://www.tvn24.pl/wiadomosci-ze-swiata,2.xml");
-        BlogEntity blogEntity4 = saveBlog("TVN Sport", "http://sport.tvn24.pl/sport,81,m.xml");
+        RssFeedEntity rssFeedEntity1 = saveBlog("TVN Najnowsze", "http://www.tvn24.pl/najnowsze.xml");
+        RssFeedEntity rssFeedEntity2 = saveBlog("TVN Najważniejsze", "http://www.tvn24.pl/najwazniejsze.xml");
+        RssFeedEntity rssFeedEntity3 = saveBlog("TVN Świat", "http://www.tvn24.pl/wiadomosci-ze-swiata,2.xml");
+        RssFeedEntity rssFeedEntity4 = saveBlog("TVN Sport", "http://sport.tvn24.pl/sport,81,m.xml");
 
-        saveItems(blogEntity1);
-        saveItems(blogEntity2);
-        saveItems(blogEntity3);
-        saveItems(blogEntity4);
+        saveItems(rssFeedEntity1);
+        saveItems(rssFeedEntity2);
+        saveItems(rssFeedEntity3);
+        saveItems(rssFeedEntity4);
 
     }
 
-    private BlogEntity saveBlog(String name, String url) {
-        BlogEntity blogEntity = new BlogEntity();
-        blogEntity.setName(name);
-        blogEntity.setUrl(url);
-        blogEntity.setUserEntity(userEntityAdmin);
-        blogRepo.save(blogEntity);
-        return blogEntity;
+    private RssFeedEntity saveBlog(String name, String url) {
+        RssFeedEntity rssFeedEntity = new RssFeedEntity();
+        rssFeedEntity.setName(name);
+        rssFeedEntity.setUrl(url);
+        rssFeedEntity.setUserEntity(userEntityAdmin);
+        blogRepo.save(rssFeedEntity);
+        return rssFeedEntity;
     }
 
-    private void saveItems(BlogEntity blogEntity) throws RSSException {
-        List<BlogEntryEntity> itemEntities = rssService.getItems(blogEntity.getUrl());
-        blogEntity.setItemEntities(itemEntities);
-        blogService.saveAll(blogEntity);
+    private void saveItems(RssFeedEntity rssFeedEntity) throws RSSException {
+        List<RssFeedEntryEntity> itemEntities = rssService.getItems(rssFeedEntity.getUrl());
+        rssFeedEntity.setItemEntities(itemEntities);
+        blogService.saveAll(rssFeedEntity);
     }
 
 }

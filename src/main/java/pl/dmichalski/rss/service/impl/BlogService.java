@@ -7,8 +7,8 @@ import org.springframework.security.access.method.P;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmichalski.rss.entity.BlogEntity;
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.entity.UserEntity;
 import pl.dmichalski.rss.exception.RSSException;
 import pl.dmichalski.rss.repository.BlogRepo;
@@ -42,22 +42,22 @@ public class BlogService implements IBlogService {
     private RssService rssService;
 
     @Override
-    public void save(BlogEntity blogEntity, String name) {
+    public void save(RssFeedEntity rssFeedEntity, String name) {
         UserEntity userEntity = userRepo.findByName(name);
-        blogEntity.setUserEntity(userEntity);
-        blogRepo.save(blogEntity);
-        saveAll(blogEntity);
+        rssFeedEntity.setUserEntity(userEntity);
+        blogRepo.save(rssFeedEntity);
+        saveAll(rssFeedEntity);
     }
 
     @Override
-    public void saveAll(BlogEntity blogEntity) {
+    public void saveAll(RssFeedEntity rssFeedEntity) {
         try {
-            List<BlogEntryEntity> itemEntities = rssService.getItems(blogEntity.getUrl());
-            for (BlogEntryEntity blogEntryEntity : itemEntities) {
-                BlogEntryEntity savedBlogEntryEntity = itemRepo.findByBlogEntityAndLink(blogEntity, blogEntryEntity.getLink());
-                if (savedBlogEntryEntity == null) {
-                    blogEntryEntity.setBlogEntity(blogEntity);
-                    itemRepo.save(blogEntryEntity);
+            List<RssFeedEntryEntity> itemEntities = rssService.getItems(rssFeedEntity.getUrl());
+            for (RssFeedEntryEntity rssFeedEntryEntity : itemEntities) {
+                RssFeedEntryEntity savedRssFeedEntryEntity = itemRepo.findByRssFeedEntityAndLink(rssFeedEntity, rssFeedEntryEntity.getLink());
+                if (savedRssFeedEntryEntity == null) {
+                    rssFeedEntryEntity.setRssFeedEntity(rssFeedEntity);
+                    itemRepo.save(rssFeedEntryEntity);
                 }
             }
         } catch (RSSException e) {
@@ -67,19 +67,19 @@ public class BlogService implements IBlogService {
 
     @Scheduled(fixedDelay = 3600000)
     public void reloadBlogs() {
-        List<BlogEntity> blogs = blogRepo.findAll();
+        List<RssFeedEntity> blogs = blogRepo.findAll();
         blogs.stream().forEach(this::saveAll);
     }
 
     @Override
-    public BlogEntity findOne(Long id) {
+    public RssFeedEntity findOne(Long id) {
         return blogRepo.findOne(id);
     }
 
     @Override
     @PreAuthorize("#blog.userEntity.name == authentication.name or hasRole('ROLE_ADMIN')")
-    public void delete(@P("blog") BlogEntity blogEntity) {
-        blogRepo.delete(blogEntity);
+    public void delete(@P("blog") RssFeedEntity rssFeedEntity) {
+        blogRepo.delete(rssFeedEntity);
     }
 }
 

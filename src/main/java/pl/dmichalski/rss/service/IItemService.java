@@ -1,6 +1,6 @@
 package pl.dmichalski.rss.service;
 
-import pl.dmichalski.rss.entity.BlogEntryEntity;
+import pl.dmichalski.rss.entity.RssFeedEntryEntity;
 
 import java.util.List;
 
@@ -9,6 +9,6 @@ import java.util.List;
  */
 public interface IItemService {
 
-    public List<BlogEntryEntity> findAll();
+    public List<RssFeedEntryEntity> findAll();
 
 }

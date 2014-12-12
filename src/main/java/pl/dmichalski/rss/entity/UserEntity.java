@@ -37,7 +37,7 @@ public class UserEntity {
     private List<UserRoleEntity> roleEntities;
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.REMOVE)
-    private List<BlogEntity> blogEntities;
+    private List<RssFeedEntity> blogEntities;
 
     public Long getId() {
         return id;
@@ -79,11 +79,11 @@ public class UserEntity {
         this.roleEntities = roleEntities;
     }
 
-    public List<BlogEntity> getBlogEntities() {
+    public List<RssFeedEntity> getBlogEntities() {
         return blogEntities;
     }
 
-    public void setBlogEntities(List<BlogEntity> blogEntities) {
+    public void setBlogEntities(List<RssFeedEntity> blogEntities) {
         this.blogEntities = blogEntities;
     }
 
