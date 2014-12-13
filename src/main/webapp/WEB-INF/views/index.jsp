@@ -1,88 +1,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-
-<%--<h1>Latest news from the Java world:</h1>--%>
-
-<%--<table class="table table-bordered table-hover table-striped">--%>
-    <%--<thead>--%>
-    <%--<tr>--%>
-        <%--<th>Name</th>--%>
-        <%--<th>Date</th>--%>
-        <%--<th>Item</th>--%>
-    <%--</tr>--%>
-    <%--</thead>--%>
-    <%--<tbody>--%>
-    <%--<c:forEach items="${items}" var="item">--%>
-        <%--<tr>--%>
-            <%--<td class="col-md-1">--%>
-                <%--<c:out value="${item.rssFeedEntity.name}"/>--%>
-            <%--</td>--%>
-            <%--<td class="col-md-1">--%>
-                <%--<c:out value="${item.publishedDate}"/>--%>
-            <%--</td>--%>
-            <%--<td class="col-md-10">--%>
-                <%--<strong>--%>
-                    <%--<a href="<c:out value="${item.link}"/>" target="_blank">--%>
-                        <%--<c:out value="${item.title}"/>--%>
-                    <%--</a>--%>
-                <%--</strong>--%>
-                <%--<br/>--%>
-                    <%--${item.description}--%>
-            <%--</td>--%>
-        <%--</tr>--%>
-    <%--</c:forEach>--%>
-    <%--</tbody>--%>
-<%--</table>--%>
-
-
-
-
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
     <div id="start" class="container content">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
-                <article class="clearfix">
-                    <div class="post-date">
-                        26 listopad 2014 <span><a href="">11 komentarzy</a></span>
-                    </div>
-                    <h2><a href="post-typography.html">Jeżeli uda się zgromadzić poparcie lewicy, będę gotowy wystartować</a></h2>
-                    <p>Leszek Miller zaproponował, by Ryszard Kalisz został kandydatem SLD w przyszłorocznych wyborach prezydenckich. -
-                        Jeżeli się uda zgromadzić poparcie lewicy od alternatywnej po liberalną, wtedy będę gotowy wystartować - zadeklarował
-                        na antenie TVN24 Ryszard Kalisz.
-                        <a class="" href="post-typography.html">Czytaj całość</a>
-                    </p>
-                </article>
-                <article class="clearfix">
-                    <div class="post-date">
-                        24 listopad 2014<span><a href="">42 komentarze</a></span>
-                    </div>
-                    <h2><a href="post-image.html">"Fakty po Faktach" o kandydaturze Kalisza na prezydenta RP</a></h2>
-                    <p>Na dzisiejszym posiedzeniu Rady Krajowej SLD Leszek Miller zgłosił kandydaturę byłego polityka Sojuszu
-                        Ryszarda Kalisza na prezydenta, ale ostatecznie ustalono, że kandydat zostanie wskazany na konwencji SLD na
-                        przełomie stycznia i lutego.
-                        <a class="" href="post-image.html">Czytaj całość</a>
-                    </p>
-                </article>
-                <article class="clearfix">
-                    <div class="post-date">
-                        20 listopad 2014 <span><a href="">2 komentarze</a></span>
-                    </div>
-                    <h2><a href="post-audio.html">Rosja udusi Ukrainę? "Tranzyt zostanie sprowadzony do zera"</a></h2>
-                    <p> Prezes Gazpromu Aleksiej Miller oświadczył w sobotę, że po ułożeniu nowego gazociągu z Rosji przez Morze Czarne do Turcji,
-                        rola Ukrainy jako kraju tranzytowego przy dostawach rosyjskiego gazu do Europy "zostanie sprowadzona do zera".
-                        <a class="" href="post-audio.html">Czytaj całość</a>
-                    </p>
-                </article>
-                <article class="clearfix last">
-                    <div class="post-date">
-                        18 listopad 2014 <span><a href="">23 komentarzy</a></span>
-                    </div>
-                    <h2><a href="post-video.html">"Mieszkańcy ugasili jednego z mężczyzn"</a></h2>
-                    <p>Dwie osoby zostały ranne w wybuchu na stacji kontroli pojazdów w Zabrzu (woj. śląskie). Jak poinformowała nas policja,
-                        do eksplozji doszło w trakcie wymiany instalacji gazowej w samochodzie.
-                        <a class="" href="post-video.html">Czytaj całość</a>
-                    </p>
-                </article>
+
+                <c:forEach items="${items}" var="item">
+                    <article class="clearfix">
+                        <div class="post-date">
+                            <fmt:formatDate value="${item.publishedDate}" pattern="dd-MM-yyyy HH:mm:ss" />
+                            <span><a href="#">11 komentarzy</a></span>
+                        </div>
+                        <h2>
+                            <a href="<c:out value="${item.link}"/>" target="_blank">${item.title}</a>
+                        </h2>
+                        <p> ${item.description}
+                            <a href="<c:out value="${item.link}"/>" target="_blank">Czytaj całość</a>
+                        </p>
+                    </article>
+                </c:forEach>
 
                 <div class="post-popular">
                     <div class="row hidden-xs">

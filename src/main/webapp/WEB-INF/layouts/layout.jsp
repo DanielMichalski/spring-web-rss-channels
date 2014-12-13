@@ -8,18 +8,6 @@
 <html>
 <head>
     <title><tiles:getAsString name="title"/></title>
-    <%--<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/bootstrap/3.1.1/css/bootstrap.min.css"/>--%>
-    <%--<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/bootstrap/3.1.1/css/bootstrap-theme.min.css"/>--%>
-    <%--<link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/bootstrap/3.1.1/css/style.css"/>--%>
-    <%--<script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/bootstrap/3.1.1/js/bootstrap.min.js"></script>--%>
-    <%--<script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery/js/jquery-2.1.1.min.js"></script>--%>
-    <%--<script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery.validate/1.13.1/jquery.validate.min.js"></script>--%>
-    <%--&lt;%&ndash;<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<link rel="stylesheet" href="<spring:url value="resources/css/style.css"/>"/>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<script type="text/javascript" src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>&ndash;%&gt;--%>
-    <%--&lt;%&ndash;<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>&ndash;%&gt;--%>
     <meta charset="utf-8">
     <meta name="description" content="Key Lime Responsive HTML5/CSS3 Template from angelostudio.net">
     <meta name="author" content="ANGELOSTUDIO.NET">
@@ -43,7 +31,6 @@
 
 <body id="home">
     <tilesx:useAttribute name="current"/>
-
     <tiles:insertAttribute name="header"/>
     <tiles:insertAttribute name="body"/>
     <tiles:insertAttribute name="footer"/>
