@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" pageEncoding="UTF-8" %>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 
 <footer>
     <div class="footer">
@@ -77,9 +78,9 @@
         <div class="container">
             <p class="pull-left">RSS Reader</p>
             <ul class="social-links pull-right">
-                <li><a href="#link"><i class="icon-twitter"></i></a></li>
-                <li><a href="#link"><i class="icon-facebook"></i></a></li>
-                <li><a href="#link"><i class="icon-googleplus"></i></a></li>
+                <li><a href="https://twitter.com/d__michalski"><i class="icon-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/daniel.michalski.142"><i class="icon-facebook"></i></a></li>
+                <li><a href="https://plus.google.com/u/0/106191107038382924525/posts"><i class="icon-googleplus"></i></a></li>
             </ul>
         </div>
     </div>
@@ -97,28 +98,28 @@
             <div class="modal-body">
                 <div class="box">
                     <div class="form loginBox">
-                        <form class="myform" method="post" action="/login" accept-charset="UTF-8">
+                        <form class="myform" method="post" action="<spring:url value="/j_spring_security_check"/>" accept-charset="UTF-8">
                             <div class="form-group">
-                                <label class="control-label">Email</label>
+                                <label class="control-label">Login</label>
                                 <div class="controls">
-                                    <input id="email" class="form-control" type="text" placeholder="E-mail" name="email">
+                                    <input id="login" class="form-control" type="text" placeholder="Login" name="j_username" required="true">
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label class="control-label">password</label>
                                 <div class="controls">
-                                    <input id="password" class="form-control" type="password" placeholder="Hasło" name="password">
+                                    <input id="password" class="form-control" type="password" placeholder="Hasło" name="j_password" required="true">
                                 </div>
                             </div>
                             <p class="text-center"><a href="">Zapomniałeś hasła?</a></p>
-                            <input class="btn btn-block" type="button" value="Zaloguj" >
+                            <input class="btn btn-block" type="submit" value="Zaloguj" >
                         </form>
                     </div>
                 </div>
             </div>
             <div class="modal-footer">
                 <div class="forgot login-footer">
-                    <span>Czy chcesz <a href="#">utworzyć konto</a>?</span>
+                    <span>Czy chcesz <a href="<spring:url value="/register"/>">utworzyć konto</a>?</span>
                 </div>
             </div>
         </div>

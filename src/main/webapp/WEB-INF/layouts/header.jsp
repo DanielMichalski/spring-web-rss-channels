@@ -157,8 +157,11 @@
     <div id="main-nav" class="">
         <div class="container">
             <div class="nav-header">
-                <a class="nav-brand" href="index.html"><i class="icon-lime"></i>RSS Reader</a>
+                <a class="nav-brand" href="<spring:url value="/"/>"><i class="icon-lime"></i>RSS Reader</a>
                 <a class="menu-link nav-icon" href="#"><i class="icon-menu2"></i></a>
+                <security:authorize access="isAuthenticated()">
+                    <a class="btn btn-blog outline-white pull-right" href="<spring:url value="/logout"/>">Wyloguj</a>
+                </security:authorize>
                 <a class="btn btn-blog outline-white pull-right" href="#" data-toggle="modal" data-target="#loginModal">Zaloguj</a>
             </div>
         </div>
