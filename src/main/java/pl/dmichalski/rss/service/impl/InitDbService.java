@@ -71,9 +71,9 @@ public class InitDbService {
         RssFeedEntity rssFeedEntity4 = saveBlog("TVN Sport", "http://sport.tvn24.pl/sport,81,m.xml");
 
         saveItems(rssFeedEntity1);
-        saveItems(rssFeedEntity2);
-        saveItems(rssFeedEntity3);
-        saveItems(rssFeedEntity4);
+//        saveItems(rssFeedEntity2);
+//        saveItems(rssFeedEntity3);
+//        saveItems(rssFeedEntity4);
 
     }
 
