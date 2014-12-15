@@ -34,5 +34,11 @@
     <tiles:insertAttribute name="header"/>
     <tiles:insertAttribute name="body"/>
     <tiles:insertAttribute name="footer"/>
+
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/placeholders.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/wow.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/js/custom.js"></script>
 </body>
 </html>

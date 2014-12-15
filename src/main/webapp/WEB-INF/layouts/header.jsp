@@ -152,6 +152,7 @@
         <li><a href="contact.html"><i class="icon-envelope"></i>Contact</a></li>
     </ul>
 </div>
+
 <div id="wrap">
     <div id="main-nav" class="">
         <div class="container">

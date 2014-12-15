@@ -11,4 +11,6 @@ public interface IRssFeedItemService {
 
     public List<RssFeedEntryEntity> findAll();
 
+    public List<RssFeedEntryEntity> find10NewestEntries();
+
 }

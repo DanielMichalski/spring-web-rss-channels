@@ -20,7 +20,11 @@ public class RssFeedItemService implements IRssFeedItemService {
     private ItemRepository itemRepository;
 
     public List<RssFeedEntryEntity> findAll() {
-        PageRequest pageRequest = new PageRequest(0, 20, Sort.Direction.DESC, "publishedDate");
+        return itemRepository.findAll();
+    }
+
+    public List<RssFeedEntryEntity> find10NewestEntries() {
+        PageRequest pageRequest = new PageRequest(0, 10, Sort.Direction.DESC, "publishedDate");
         return itemRepository.findAll(pageRequest).getContent();
     }
 

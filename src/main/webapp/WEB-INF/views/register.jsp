@@ -3,7 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-
 <form:form commandName="aUser" cssClass="form-horizonal form-register">
     <div class="form-register">
         <c:if test="${param.registered eq true}">
