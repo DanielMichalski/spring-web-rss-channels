@@ -21,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Author: Daniel
@@ -45,7 +46,8 @@ public class RssService implements IRssService{
                     rssFeedEntryEntity.setTitle(rssItem.getTitle());
                     rssFeedEntryEntity.setDescription(rssItem.getDescription());
                     rssFeedEntryEntity.setLink(rssItem.getLink());
-                    Date pubDate = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z").parse(rssItem.getPubDate());
+                    Date pubDate = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss Z", Locale.ENGLISH)
+                            .parse(rssItem.getPubDate());
                     rssFeedEntryEntity.setPublishedDate(pubDate);
                     list.add(rssFeedEntryEntity);
                 }
