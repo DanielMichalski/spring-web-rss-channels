@@ -117,7 +117,7 @@
                 <a href="#" class="close-menu"><i class="icon-close"></i></a>
             </div>
         </form>
-        <li><a href="index.html"><i class="icon-lime"></i>Home</a></li>
+        <li><a href="/"><i class="icon-lime"></i>Strona domowa</a></li>
         <li><a href="about.html"><i class="icon-user"></i>About</a></li>
         <li class="submenu">
             <a href="#"><i class="icon-books"></i>Categories<b class="caret"></b></a>
@@ -162,7 +162,9 @@
                 <security:authorize access="isAuthenticated()">
                     <a class="btn btn-blog outline-white pull-right" href="<spring:url value="/logout"/>">Wyloguj</a>
                 </security:authorize>
-                <a class="btn btn-blog outline-white pull-right" href="#" data-toggle="modal" data-target="#loginModal">Zaloguj</a>
+                <security:authorize access="!isAuthenticated()">
+                    <a class="btn btn-blog outline-white pull-right" href="#" data-toggle="modal" data-target="#loginModal">Zaloguj</a>
+                </security:authorize>
             </div>
         </div>
     </div>

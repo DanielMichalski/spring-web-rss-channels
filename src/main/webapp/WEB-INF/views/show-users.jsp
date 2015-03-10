@@ -14,30 +14,38 @@
     });
 </script>
 
-<table class="table table-bordered table-hover table-striped">
-    <thead>
-    <tr>
-        <th>User name</th>
-        <th>Operations</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${usersList}" var="user">
-        <tr>
-            <td>
-                <a href="<spring:url value="/admin/users/${user.id}"/>">
-                        ${user.name}
-                </a>
-            </td>
-            <td>
-                <a href="<spring:url value="/admin/users/remove-user/${user.id}"/>" class="btn btn-danger triggerRemove">
-                    Remove
-                </a>
-            </td>
-        </tr>
-    </c:forEach>
-    </tbody>
-</table>
+
+<div class="container">
+    <div class="row">
+        <h3>Zarządzanie użytkownikami</h3>
+        <table class="table table-bordered table-hover table-striped">
+            <thead>
+            <tr>
+                <th>Nazwa użytkownika</th>
+                <th>Operacja</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${usersList}" var="user">
+                <tr>
+                    <td>
+                        <a href="<spring:url value="/admin/users/${user.id}"/>">
+                                ${user.name}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="<spring:url value="/admin/users/remove-user/${user.id}"/>"
+                           class="btn btn-danger triggerRemove">
+                            Usuń
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
+</div>
+
 
 <!-- Modal -->
 <div class="modal fade" id="modalRemove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
