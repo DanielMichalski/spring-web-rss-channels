@@ -30,7 +30,7 @@
                             <p class="post-date text-center">MAY 10, 2014</p>
                         </div>
                         <div class="col-sm-4 col-md-4">
-                            <a href="post-typography.html"><img  src="${pageContext.servletContext.contextPath}/resources/img/img1.jpg" class="img-responsive" alt="img1"></a>
+                            <a href="post-typography.html"><img src="${pageContext.servletContext.contextPath}/resources/img/img1.jpg" class="img-responsive" alt="img1"></a>
                             <h4 class="text-center"><a href="post-typography.html">We don't have a brig</a></h4>
                             <p class="post-date text-center">september 27, 2014</p>
 

@@ -16,6 +16,25 @@
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
+    <context:property-placeholder location="classpath:properties/app.properties"/>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:properties/messages"/>
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+        </bean>
+    </mvc:interceptors>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.CookieLocaleResolver">
+        <property name="defaultLocale" value="pl"/>
+        <property name="cookieName" value="localeCookieName"/>
+        <property name="cookieMaxAge" value="3600"/>
+    </bean>
+
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
         <property name="definitions" value="/WEB-INF/definitions/general_definition.xml"/>
     </bean>

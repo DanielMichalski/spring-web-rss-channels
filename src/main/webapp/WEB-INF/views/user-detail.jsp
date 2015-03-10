@@ -3,9 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<h1>${user.name}</h1>
-
-<br/><br/>
 
 <script type="text/javascript">
     $(document).ready(function () {
@@ -18,42 +15,49 @@
     });
 </script>
 
-<!-- Nav tabs -->
-<ul class="nav nav-tabs">
-    <c:forEach items="${user.blogEntities}" var="blog">
-        <li><a href="#blog_${blog.id}" data-toggle="tab">${blog.name}</a></li>
-    </c:forEach>
-</ul>
+<div id="start" class="container">
+    <div class="row">
+        <h1>${user.name}</h1>
+        <br/><br/>
 
-<!-- Tab panes -->
-<div class="tab-content">
-    <c:forEach items="${user.blogEntities}" var="blog">
-        <div class="tab-pane" id="blog_${blog.id}">
-            <h1>${blog.name}</h1>
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs">
+            <c:forEach items="${user.blogEntities}" var="blog">
+                <li><a href="#blog_${blog.id}" data-toggle="tab">${blog.name}</a></li>
+            </c:forEach>
+        </ul>
 
-            <p>
-                <a href="<spring:url value="/blog/remove/${blog.id}"/>" class="btn btn-danger triggerRemove">Remove</a>
-                    ${blog.url}
-            </p>
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <c:forEach items="${user.blogEntities}" var="blog">
+                <div class="tab-pane" id="blog_${blog.id}">
+                    <h1>${blog.name}</h1>
 
-            <table class="table table-bordered table-hover table-striped">
-                <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Link</th>
-                </tr>
-                </thead>
-                <tbody>
-                <c:forEach items="${blog.itemEntities}" var="item">
-                    <tr>
-                        <td>${item.title}</td>
-                        <td>${item.link}</td>
-                    </tr>
-                </c:forEach>
-                </tbody>
-            </table>
+                    <p>
+                        <a href="<spring:url value="/blog/remove/${blog.id}"/>" class="btn btn-danger triggerRemove">Remove</a>
+                            ${blog.url}
+                    </p>
+
+                    <table class="table table-bordered table-hover table-striped">
+                        <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Link</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${blog.itemEntities}" var="item">
+                            <tr>
+                                <td>${item.title}</td>
+                                <td>${item.link}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+            </c:forEach>
         </div>
-    </c:forEach>
+    </div>
 </div>
 
 <!-- Modal -->

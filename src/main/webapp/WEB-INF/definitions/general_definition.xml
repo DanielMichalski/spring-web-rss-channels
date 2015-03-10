@@ -10,37 +10,37 @@
     </definition>
 
     <definition name="index" extends="common">
-        <put-attribute name="title" value="Home Page - Java Blogs"/>
+        <put-attribute name="title" value="page.index.title"/>
         <put-attribute name="body" value="/WEB-INF/views/index.jsp"/>
         <put-attribute name="current" value="index"/>
     </definition>
 
     <definition name="show-users" extends="common">
-        <put-attribute name="title" value="Users - Java Blogs"/>
+        <put-attribute name="title" value="page.showUsers.title"/>
         <put-attribute name="body" value="/WEB-INF/views/show-users.jsp"/>
         <put-attribute name="current" value="show-users"/>
     </definition>
 
     <definition name="user-detail" extends="common">
-        <put-attribute name="title" value="User details - Java Blogs"/>
+        <put-attribute name="title" value="page.userDetail.title"/>
         <put-attribute name="body" value="/WEB-INF/views/user-detail.jsp"/>
         <put-attribute name="current" value="user-detail"/>
     </definition>
 
     <definition name="account" extends="common">
-        <put-attribute name="title" value="User account - Java Blogs"/>
+        <put-attribute name="title" value="page.account.title"/>
         <put-attribute name="body" value="/WEB-INF/views/my-account.jsp"/>
         <put-attribute name="current" value="account"/>
     </definition>
 
     <definition name="register" extends="common">
-        <put-attribute name="title" value="User registration - Java Blogs"/>
+        <put-attribute name="title" value="page.register.title"/>
         <put-attribute name="body" value="/WEB-INF/views/register.jsp"/>
         <put-attribute name="current" value="register"/>
     </definition>
 
     <definition name="login" extends="common">
-        <put-attribute name="title" value="Login - Java Blogs"/>
+        <put-attribute name="title" value="page.login.title"/>
         <put-attribute name="body" value="/WEB-INF/views/login.jsp"/>
         <put-attribute name="current" value="login"/>
     </definition>

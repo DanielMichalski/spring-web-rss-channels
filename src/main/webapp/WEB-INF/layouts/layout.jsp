@@ -3,11 +3,15 @@
 <%@ taglib prefix="tilesx" uri="http://tiles.apache.org/tags-tiles-extras" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 
 <!DOCTYPE html>
 <html>
 <head>
-    <title><tiles:getAsString name="title"/></title>
+    <c:set var="titleKey">
+        <tiles:insertAttribute name="title" ignore="true" />
+    </c:set>
+    <title><spring:message code="${titleKey}"/></title>
     <meta charset="utf-8">
     <meta name="description" content="Key Lime Responsive HTML5/CSS3 Template from angelostudio.net">
     <meta name="author" content="ANGELOSTUDIO.NET">
