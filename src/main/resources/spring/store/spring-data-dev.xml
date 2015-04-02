@@ -25,11 +25,11 @@
         </property>
         <property name="jpaProperties">
             <map>
-                <entry key="hibernate.show_sql" value="true"/>
-                <entry key="hibernate.hbm2ddl.auto" value="create"/>
-                <entry key="hibernate.connection.CharSet" value="utf8"/>
-                <entry key="hibernate.connection.characterEncoding" value="utf8"/>
-                <entry key="hibernate.connection.useUnicode" value="true"/>
+                <entry key="hibernate.show_sql" value="${dev.hibernate.show_sql}"/>
+                <entry key="hibernate.hbm2ddl.auto" value="${dev.hibernate.hbm2ddl.auto}"/>
+                <entry key="hibernate.connection.CharSet" value="${dev.hibernate.connection.CharSet}"/>
+                <entry key="hibernate.connection.characterEncoding" value="${dev.hibernate.connection.characterEncoding}"/>
+                <entry key="hibernate.connection.useUnicode" value="${dev.hibernate.connection.useUnicode}"/>
             </map>
         </property>
     </bean>
