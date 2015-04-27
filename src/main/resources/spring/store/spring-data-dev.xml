@@ -13,28 +13,31 @@
                 http://www.springframework.org/schema/data/jpa
                 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-       <jpa:repositories base-package="pl.dmichalski.rss.repository"/>
+    <jpa:repositories base-package="pl.dmichalski.rss.repository"/>
 
-       <jdbc:embedded-database id="dataSource" type="HSQL"/>
+    <jdbc:embedded-database id="dataSource" type="HSQL"/>
 
-       <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-              <property name="packagesToScan" value="pl.dmichalski.rss.entity"/>
-              <property name="dataSource" ref="dataSource"/>
-              <property name="persistenceProvider">
-                     <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
-              </property>
-              <property name="jpaProperties">
-                     <map>
-                            <entry key="hibernate.show_sql" value="true"/>
-                            <entry key="hibernate.hbm2ddl.auto" value="create"/>
-                     </map>
-              </property>
-       </bean>
+    <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="packagesToScan" value="pl.dmichalski.rss.entity"/>
+        <property name="dataSource" ref="dataSource"/>
+        <property name="persistenceProvider">
+            <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
+        </property>
+        <property name="jpaProperties">
+            <map>
+                <entry key="hibernate.show_sql" value="${dev.hibernate.show_sql}"/>
+                <entry key="hibernate.hbm2ddl.auto" value="${dev.hibernate.hbm2ddl.auto}"/>
+                <entry key="hibernate.connection.CharSet" value="${dev.hibernate.connection.CharSet}"/>
+                <entry key="hibernate.connection.characterEncoding" value="${dev.hibernate.connection.characterEncoding}"/>
+                <entry key="hibernate.connection.useUnicode" value="${dev.hibernate.connection.useUnicode}"/>
+            </map>
+        </property>
+    </bean>
 
-       <tx:annotation-driven/>
+    <tx:annotation-driven/>
 
-       <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
-              <property name="dataSource" ref="dataSource"/>
-       </bean>
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
 
 </beans>
