@@ -16,6 +16,8 @@
 
     <task:annotation-driven/>
 
+    <context:property-placeholder location="classpath:properties/app.properties"/>
+
     <beans profile="dev">
         <import resource="classpath:spring/store/spring-data-dev.xml"/>
     </beans>

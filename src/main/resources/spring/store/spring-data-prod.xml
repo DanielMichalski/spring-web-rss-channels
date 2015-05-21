@@ -26,7 +26,8 @@
         </property>
         <property name="jpaProperties">
             <map>
-                <entry key="hibernate.show_sql" value="${prod.hibernate.show_sql}"/>
+                <entry key="hibernate.dialect" value="org.hibernate.dialect.PostgresPlusDialect"/>
+                <entry key="hibernate.show_sql" value="${prod.hibernate.show.sql}"/>
                 <entry key="hibernate.hbm2ddl.auto" value="${prod.hibernate.hbm2ddl.auto}"/>
                 <entry key="hibernate.connection.CharSet" value="${prod.hibernate.connection.CharSet}"/>
                 <entry key="hibernate.connection.characterEncoding" value="${prod.hibernate.connection.characterEncoding}"/>

@@ -16,8 +16,6 @@
 
     <mvc:resources mapping="/resources/**" location="/resources/"/>
 
-    <context:property-placeholder location="classpath:properties/app.properties"/>
-
     <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basename" value="classpath:properties/messages"/>
         <property name="defaultEncoding" value="UTF-8"/>
