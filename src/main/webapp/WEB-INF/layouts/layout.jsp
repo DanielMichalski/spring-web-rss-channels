@@ -13,8 +13,6 @@
     </c:set>
     <title><spring:message code="${titleKey}"/></title>
     <meta charset="utf-8">
-    <meta name="description" content="Key Lime Responsive HTML5/CSS3 Template from angelostudio.net">
-    <meta name="author" content="ANGELOSTUDIO.NET">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather:400,400italic,700italic"
           rel="stylesheet" type="text/css">
