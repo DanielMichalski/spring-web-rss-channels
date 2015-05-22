@@ -106,4 +106,20 @@ public class UserEntity {
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("UserEntity{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", email='").append(email).append('\'');
+        sb.append(", password='").append(password).append('\'');
+        sb.append(", confirmPassword='").append(confirmPassword).append('\'');
+        sb.append(", enabled=").append(enabled);
+        sb.append(", roleEntities=").append(roleEntities);
+        sb.append(", blogEntities=").append(blogEntities);
+        sb.append('}');
+        return sb.toString();
+    }
+
 }

@@ -15,8 +15,8 @@
 </div>
 
 <div class="form-register">
-    <div class="panel panel-info">
-        <div class="panel-heading">Rejestracja</div>
+    <div class="panel panel-success">
+        <div class="panel-heading"><spring:message code="page.register.header.title"/></div>
         <div class="panel-body">
             <form:form commandName="aUser">
                 <div id="register-data" class="container">

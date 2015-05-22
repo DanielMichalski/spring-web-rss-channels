@@ -54,3 +54,17 @@
 .form-signin button {
     margin-top: 20px;
 }
+
+.form-contact {
+    max-width: 600px;
+    padding: 15px;
+    margin: 20px auto;
+}
+
+.form-contact textarea {
+    resize: vertical;
+}
+
+#email-info {
+    margin-bottom: 30px;
+}

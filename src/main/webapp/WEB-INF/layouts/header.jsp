@@ -107,28 +107,6 @@
                 <li><a href="?lang=en">English <span class="badge golden">2</span></a></li>
             </ul>
         </li>
-        <li class="submenu submenu-open">
-            <a href="#"><i class="icon-file"></i>Pages<b class="caret"></b></a>
-            <ul class="submenu-list">
-                <li><a href="post-image.html">Post Image</a></li>
-                <li><a href="post-audio.html">Post Audio</a></li>
-                <li><a href="post-video.html">Post Video</a></li>
-                <li><a href="post-typography.html">Typography</a></li>
-                <li><a href="author.html">Author</a></li>
-                <li><a href="search.html">Search</a></li>
-                <li><a href="404.html">404 Error</a></li>
-            </ul>
-        </li>
-        <li class="submenu">
-            <a href="#"><i class="icon-calendar"></i>Archives <b class="caret"></b></a>
-            <ul class="submenu-list">
-                <li><a href="archives.html">June<span>2014</span></a></li>
-                <li><a href="archives.html">May<span>2014</span></a></li>
-                <li><a href="archives.html">January<span>2014</span></a></li>
-                <li><a href="archives.html">October<span>2013</span></a></li>
-            </ul>
-        </li>
-
     </ul>
 </div>
 

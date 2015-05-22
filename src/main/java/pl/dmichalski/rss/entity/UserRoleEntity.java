@@ -42,4 +42,15 @@ public class UserRoleEntity {
     public void setUserEntities(List<UserEntity> userEntities) {
         this.userEntities = userEntities;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("UserRoleEntity{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", userEntities=").append(userEntities);
+        sb.append('}');
+        return sb.toString();
+    }
+
 }

@@ -3,10 +3,9 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 
-
-<div class="form-login">
-    <div class="panel panel-info">
-        <div class="panel-heading">Logowanie</div>
+<div id="start" class="form-login">
+    <div class="panel panel-success">
+        <div class="panel-heading"><spring:message code="page.login.header.title"/></div>
         <div class="panel-body">
             <form class="form-signin" role="form" action="<spring:url value="/j_spring_security_check"/>" method="POST">
                 <label for="j_username"><spring:message code="page.login.login"/></label>
