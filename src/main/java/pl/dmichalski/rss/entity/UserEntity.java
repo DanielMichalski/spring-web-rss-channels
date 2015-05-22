@@ -30,6 +30,10 @@ public class UserEntity {
     @Size(min = 5, message = "Password must be at least 5 characters!")
     private String password;
 
+    @Transient
+
+    private String confirmPassword;
+
     private boolean enabled;
 
     @ManyToMany
@@ -85,6 +89,14 @@ public class UserEntity {
 
     public void setBlogEntities(List<RssFeedEntity> blogEntities) {
         this.blogEntities = blogEntities;
+    }
+
+    public String getConfirmPassword() {
+        return confirmPassword;
+    }
+
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 
     public boolean isEnabled() {

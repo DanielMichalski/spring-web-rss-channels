@@ -20,6 +20,7 @@
           rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/style.css"/>
+    <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/own-style.css"/>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/icons.css"/>
     <link rel="stylesheet" href="${pageContext.servletContext.contextPath}/resources/css/animate.min.css"/>
     <link rel="shortcut icon" href="${pageContext.servletContext.contextPath}/resources/img/ico/32.png" sizes="32x32" type="image/png"/>

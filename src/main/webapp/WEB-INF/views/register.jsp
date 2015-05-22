@@ -5,10 +5,8 @@
 
 <div id="start" class="container">
     <div class="row">
-        <h1><spring:message code="page.register.header.title"/></h1>
-
         <c:if test="${param.registered eq true}">
-            <div class="alert alert-success">
+            <div id="register-info" class="alert alert-success">
                 <spring:message code="page.register.registrationSuccessful"/>
                 <a data-toggle="modal" data-target="#loginModal"><spring:message code="page.register.login"/></a>
             </div>
@@ -16,38 +14,41 @@
     </div>
 </div>
 
-<form:form commandName="aUser">
-    <div class="container">
-        <div class="row clearfix">
-            <div class="col-md-12 column">
-                <div class="row clearfix">
-                    <div class="col-md-4 column">
+<div class="form-register">
+    <div class="panel panel-info">
+        <div class="panel-heading">Rejestracja</div>
+        <div class="panel-body">
+            <form:form commandName="aUser">
+                <div id="register-data" class="container">
+                    <div class="form-group">
+                        <label for="name" class=""><spring:message code="page.register.name"/></label>
+                        <form:input path="name" cssClass="form-control"/>
+                        <form:errors path="name"/>
                     </div>
-                    <div class="col-md-4 column">
-                        <div class="form-group">
-                            <label for="name" class=""><spring:message code="page.register.name"/></label>
-                            <form:input path="name" cssClass="form-control"/>
-                            <form:errors path="name"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="email" class=""><spring:message code="page.register.email"/></label>
-                            <form:input path="email" cssClass="form-control"/>
-                            <form:errors path="email"/>
-                        </div>
-                        <div class="form-group">
-                            <label for="password" class=""><spring:message code="page.register.password"/></label>
-                            <form:password path="password" cssClass="form-control"/>
-                            <form:errors path="password"/>
-                        </div>
-                        <button type="submit" class="btn btn-default"><spring:message code="page.register.submit"/></button>
+                    <div class="form-group">
+                        <label for="email" class=""><spring:message code="page.register.email"/></label>
+                        <form:input path="email" cssClass="form-control"/>
+                        <form:errors path="email"/>
                     </div>
-                    <div class="col-md-4 column">
+                    <div class="form-group">
+                        <label for="password" class=""><spring:message
+                                code="page.register.password"/></label>
+                        <form:password path="password" cssClass="form-control"/>
+                        <form:errors path="password"/>
                     </div>
+                    <div class="form-group">
+                        <label for="password" class=""><spring:message
+                                code="page.register.confirmPassword"/></label>
+                        <form:password path="confirmPassword" cssClass="form-control"/>
+                        <form:errors path="confirmPassword"/>
+                    </div>
+                    <button type="submit" class="btn btn-default"><spring:message
+                            code="page.register.submit"/></button>
                 </div>
-            </div>
+            </form:form>
         </div>
     </div>
-</form:form>
+</div>
 
 <script type="text/javascript">
     $(document).ready(function () {
