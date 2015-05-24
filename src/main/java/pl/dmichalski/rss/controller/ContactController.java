@@ -1,5 +1,7 @@
 package pl.dmichalski.rss.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -7,6 +9,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmichalski.rss.form.ContactForm;
+import pl.dmichalski.rss.service.IMailService;
 
 import javax.validation.Valid;
 
@@ -16,6 +19,12 @@ import javax.validation.Valid;
 @Controller
 @RequestMapping(value = "/contact")
 public class ContactController {
+
+    @Autowired
+    private IMailService mailService;
+
+    @Value("${mail.sender.receiver}")
+    private String mailTo;
 
     @RequestMapping(method = RequestMethod.GET)
     public String showContactForm(Model model) {
@@ -29,8 +38,13 @@ public class ContactController {
         if (results.hasErrors()) {
             return "contact";
         }
-        //TODO sending email
-        return "redirect:contact?sent=true";
+
+        String name = contactForm.getName();
+        String from = contactForm.getMail();
+        String message = contactForm.getMessage();
+
+        boolean emailSent = mailService.sendEMail(from, mailTo, "Message from " + name, message);
+        return "redirect:contact?sent=" + emailSent;
     }
 
 }

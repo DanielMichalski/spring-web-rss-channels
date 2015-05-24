@@ -9,11 +9,18 @@
         <div class="panel panel-success">
             <div class="panel-heading"><spring:message code="page.contact.header.title"/></div>
             <div class="panel-body">
-                <c:if test="${param.sent eq true}">
-                    <div id="email-info" class="alert alert-success">
-                        <spring:message code="page.contact.mailHasBeenSent"/>
-                    </div>
-                </c:if>
+                <c:choose>
+                    <c:when test="${param.sent eq true}">
+                        <div id="email-info" class="alert alert-success">
+                            <spring:message code="page.contact.mailHasBeenSent"/>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div id="email-info" class="alert alert-success">
+                            <spring:message code="page.contact.mailHasBeenSent"/>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
 
                 <form:form commandName="contactForm" class="form-horizontal">
                     <div class="form-group">
