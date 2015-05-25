@@ -15,11 +15,11 @@
                             <spring:message code="page.contact.mailHasBeenSent"/>
                         </div>
                     </c:when>
-                    <c:otherwise>
-                        <div id="email-info" class="alert alert-success">
-                            <spring:message code="page.contact.mailHasBeenSent"/>
+                    <c:when test="${param.sent eq false}">
+                        <div id="email-info" class="alert alert-danger">
+                            <spring:message code="page.contact.mailHasNotBeenSent"/>
                         </div>
-                    </c:otherwise>
+                    </c:when>
                 </c:choose>
 
                 <form:form commandName="contactForm" class="form-horizontal">
