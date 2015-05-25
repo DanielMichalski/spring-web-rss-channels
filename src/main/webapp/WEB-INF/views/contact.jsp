@@ -21,7 +21,6 @@
                         </div>
                     </c:when>
                 </c:choose>
-
                 <form:form commandName="contactForm" class="form-horizontal">
                     <div class="form-group">
                         <label for="name" class="col-sm-4 control-label"><spring:message
