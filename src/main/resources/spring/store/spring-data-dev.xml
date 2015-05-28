@@ -27,9 +27,9 @@
             <map>
                 <entry key="hibernate.show_sql" value="${dev.hibernate.show.sql}"/>
                 <entry key="hibernate.hbm2ddl.auto" value="${dev.hibernate.hbm2ddl.auto}"/>
-                <entry key="hibernate.connection.CharSet" value="${dev.hibernate.connection.CharSet}"/>
-                <entry key="hibernate.connection.characterEncoding" value="${dev.hibernate.connection.characterEncoding}"/>
-                <entry key="hibernate.connection.useUnicode" value="${dev.hibernate.connection.useUnicode}"/>
+                <!--<entry key="hibernate.connection.CharSet" value="${dev.hibernate.connection.CharSet}"/>-->
+                <!--<entry key="hibernate.connection.characterEncoding" value="${dev.hibernate.connection.characterEncoding}"/>-->
+                <!--<entry key="hibernate.connection.useUnicode" value="${dev.hibernate.connection.useUnicode}"/>-->
             </map>
         </property>
     </bean>

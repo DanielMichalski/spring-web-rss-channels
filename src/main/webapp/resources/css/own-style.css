@@ -68,3 +68,9 @@
 #email-info {
     margin-bottom: 30px;
 }
+
+.form-account {
+    max-width: 1200px;
+    padding: 15px;
+    margin: 20px auto;
+}
