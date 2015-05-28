@@ -15,5 +15,7 @@ It contains some useful configuration items:
 - Apache Tiles
 - Autowired logger
 - Internationalization
-- JQuery
+- JQuery + Ajax
 - JQuery validator
+- Sending mail using Spring + Java API
+- Spring profiles
