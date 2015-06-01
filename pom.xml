@@ -10,7 +10,7 @@
     <version>1.0</version>
     <packaging>war</packaging>
 
-    <name>Spring web blogs</name>
+    <name>Spring web application</name>
 
     <properties>
         <spring.version>4.1.1.RELEASE</spring.version>
