@@ -3,7 +3,6 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-
 <script type="text/javascript">
     $(document).ready(function () {
         $('.nav-tabs a:first').tab('show'); // Select first tab
@@ -60,7 +59,7 @@
     </div>
 </div>
 
-<!-- Modal -->
+<!-- Modal window -->
 <div class="modal fade" id="modalRemove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
