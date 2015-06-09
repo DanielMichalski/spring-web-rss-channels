@@ -5,7 +5,7 @@
 
 <div id="start" class="container">
 
-    <div class="form-account">
+    <div class="site-body">
         <div class="panel panel-success">
             <div class="panel-heading"><spring:message code="page.register.header.account"/></div>
             <div class="panel-body">
