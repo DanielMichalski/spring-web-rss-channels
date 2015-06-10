@@ -6,6 +6,7 @@
 <tiles-definitions>
 
     <definition name="common" template="/WEB-INF/layouts/layout.jsp">
+        <put-attribute name="modals" value="/WEB-INF/layouts/modals.jsp"/>
         <put-attribute name="header" value="/WEB-INF/layouts/header.jsp"/>
         <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp"/>
     </definition>

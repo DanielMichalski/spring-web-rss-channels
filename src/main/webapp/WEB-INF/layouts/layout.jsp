@@ -34,6 +34,7 @@
 
 <body id="home">
     <tilesx:useAttribute name="current"/>
+    <tiles:insertAttribute name="modals"/>
     <tiles:insertAttribute name="header"/>
     <tiles:insertAttribute name="body"/>
     <tiles:insertAttribute name="footer"/>

@@ -89,10 +89,11 @@
         <div class="container">
             <p class="pull-left">RSS Reader</p>
             <ul class="social-links pull-right">
+                <li><a href="https://github.com/DanielMichalski"><i class="icon-eye"></i></a></li>
                 <li><a href="https://twitter.com/d__michalski"><i class="icon-twitter"></i></a></li>
                 <li><a href="https://www.facebook.com/daniel.michalski.142"><i class="icon-facebook"></i></a></li>
-                <li><a href="https://plus.google.com/u/0/106191107038382924525/posts"><i
-                        class="icon-googleplus"></i></a></li>
+                <li><a href="https://plus.google.com/u/0/106191107038382924525/posts"><i class="icon-googleplus"></i></a></li>
+                <li><a href="https://www.youtube.com/user/bakeraw21/videos"><i class="icon-youtube"></i></a></li>
             </ul>
         </div>
     </div>
