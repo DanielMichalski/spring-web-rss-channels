@@ -18,7 +18,7 @@
     <div class="panel panel-success">
         <div class="panel-heading"><spring:message code="page.register.header.title"/></div>
         <div class="panel-body">
-            <form:form commandName="aUser">
+            <form:form commandName="aUser" cssClass="registrationForm">
                 <div id="register-data" class="container">
                     <div class="form-group">
                         <label for="name" class=""><spring:message code="page.register.name"/></label>
@@ -52,7 +52,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".form-register").validate(
+        $(".registrationForm").validate(
                 {
                     rules: {
                         name: {

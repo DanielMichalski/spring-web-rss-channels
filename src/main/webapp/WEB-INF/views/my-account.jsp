@@ -3,17 +3,37 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
-<button type="button" id="myButton" data-loading-text="Loading..." class="btn btn-primary" autocomplete="off">
-    Loading state
-</button>
-
-<script>
-    $('#myButton').on('click', function () {
-        var $btn = $(this).button('loading')
-        // business logic...
-        $btn.button('reset')
-    })
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.nav-tabs a:first').tab('show'); // Select first tab
+        $(".triggerRemove").click(function (e) {
+            e.preventDefault();
+            $("#removeChannel .removeBtn").attr("href", $(this).attr("href"));
+            $("#removeChannel").modal();
+        });
+        $(".blogForm").validate(
+                {
+                    rules: {
+                        name: {
+                            required: true,
+                            minlength: 3
+                        },
+                        url: {
+                            required: true,
+                            url: true
+                        }
+                    },
+                    highlight: function (element) {
+                        $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
+                    },
+                    unhighlight: function (element) {
+                        $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
+                    }
+                }
+        );
+    });
 </script>
+
 <div id="start" class="container">
     <div class="site-body">
         <div class="panel panel-success">
@@ -25,37 +45,6 @@
                         <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#newChannelModal">
                             <spring:message code="page.myAccount.newChannel"/>
                         </button>
-
-                        <script type="text/javascript">
-                            $(document).ready(function () {
-                                $('.nav-tabs a:first').tab('show'); // Select first tab
-                                $(".triggerRemove").click(function (e) {
-                                    e.preventDefault();
-                                    $("#modalRemove .removeBtn").attr("href", $(this).attr("href"));
-                                    $("#removeChannel").modal();
-                                });
-                                $(".blogForm").validate(
-                                        {
-                                            rules: {
-                                                name: {
-                                                    required: true,
-                                                    minlength: 1
-                                                },
-                                                url: {
-                                                    required: true,
-                                                    url: true
-                                                }
-                                            },
-                                            highlight: function (element) {
-                                                $(element).closest('.form-group').removeClass('has-success').addClass('has-error');
-                                            },
-                                            unhighlight: function (element) {
-                                                $(element).closest('.form-group').removeClass('has-error').addClass('has-success');
-                                            }
-                                        }
-                                );
-                            });
-                        </script>
 
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs">

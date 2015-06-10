@@ -8,6 +8,13 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
+            <c:choose>
+                <c:when test="${items == null || items.size() == 0}">
+                    <div id="post-alert" class="alert alert-warning" role="alert">
+                        <spring:message code="page.index.alert.noMessages"/>
+                    </div>
+                </c:when>
+            </c:choose>
             <c:forEach items="${items}" var="item">
                 <article class="clearfix">
                     <div class="post-date">
