@@ -65,15 +65,11 @@ public class InitDbService {
         userEntityAdmin.setRoleEntities(roleEntities);
         userRepository.save(userEntityAdmin);
 
-        RssFeedEntity rssFeedEntity1 = saveBlog("TVN Najnowsze", "http://www.tvn24.pl/najnowsze.xml");
-        RssFeedEntity rssFeedEntity2 = saveBlog("TVN Najważniejsze", "http://www.tvn24.pl/najwazniejsze.xml");
-//        RssFeedEntity rssFeedEntity3 = saveBlog("TVN Świat", "http://www.tvn24.pl/wiadomosci-ze-swiata,2.xml");
-//        RssFeedEntity rssFeedEntity4 = saveBlog("TVN Sport", "http://sport.tvn24.pl/sport,81,m.xml");
+        RssFeedEntity rssFeedEntity1 = saveBlog("CNN Top Stories", "http://rss.cnn.com/rss/edition.rss");
+        RssFeedEntity rssFeedEntity2 = saveBlog("CNN World", "http://rss.cnn.com/rss/edition_world.rss");
 
         saveItems(rssFeedEntity1);
         saveItems(rssFeedEntity2);
-//        saveItems(rssFeedEntity3);
-//        saveItems(rssFeedEntity4);
 
     }
 
