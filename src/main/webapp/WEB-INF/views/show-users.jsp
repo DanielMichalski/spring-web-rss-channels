@@ -19,55 +19,34 @@
         <div class="panel panel-success">
             <div class="panel-heading"><spring:message code="page.users.header.title"/></div>
             <div class="panel-body">
-                    <table class="table table-bordered table-hover table-striped">
-                        <thead>
+                <table class="table table-bordered table-hover table-striped">
+                    <thead>
+                    <tr>
+                        <th><spring:message code="page.users.table.username"/></th>
+                        <th><spring:message code="page.users.table.operation"/></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <security:authentication property="principal.username" var="logged_username"/>
+                    <c:forEach items="${usersList}" var="user">
                         <tr>
-                            <th><spring:message code="page.users.table.username"/></th>
-                            <th><spring:message code="page.users.table.operation"/></th>
+                            <td>
+                                <a href="<spring:url value="/admin/users/${user.id}"/>">
+                                        ${user.name}
+                                </a>
+                            </td>
+                            <td>
+                                <a <c:if test="${user.name.equals(logged_username)}"> disabled="true" </c:if>
+                                        href="<spring:url value="/admin/users/remove-user/${user.id}"/>"
+                                        class="btn btn-danger triggerRemove">
+                                    <spring:message code="page.users.table.delete"/>
+                                </a>
+                            </td>
                         </tr>
-                        </thead>
-                        <tbody>
-                        <security:authentication property="principal.username" var="logged_username" />
-                        <c:forEach items="${usersList}" var="user">
-                            <tr>
-                                <td>
-                                    <a href="<spring:url value="/admin/users/${user.id}"/>">
-                                            ${user.name}
-                                    </a>
-                                </td>
-                                <td>
-                                    <c:if test="${!user.name.equals(logged_username)}">
-                                        <a href="<spring:url value="/admin/users/remove-user/${user.id}"/>"
-                                           class="btn btn-danger triggerRemove">
-                                            <spring:message code="page.users.table.delete"/>
-                                        </a>
-                                    </c:if>
-                                </td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
+                    </c:forEach>
+                    </tbody>
+                </table>
 
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="modalRemove" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                        class="sr-only">Close</span></button>
-                <h4 class="modal-title">RemoveBlog</h4>
-            </div>
-            <div class="modal-body">
-                Really remove?
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a href="" class="btn btn-danger removeBtn">Remove</a>
             </div>
         </div>
     </div>

@@ -34,6 +34,7 @@
 
     <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery/js/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery.validate/1.13.1/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/jquery.validate/1.13.1/messages_pl.js"></script>
     <script type="text/javascript" src="${pageContext.servletContext.contextPath}/resources/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 </head>
 

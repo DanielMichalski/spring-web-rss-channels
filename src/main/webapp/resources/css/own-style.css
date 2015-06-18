@@ -36,11 +36,12 @@
 }
 
 #register-data {
-    max-width: 350px;
+    max-width: 400px;
+    padding: 10px;
 }
 
 .form-register {
-    max-width: 500px;
+    max-width: 550px;
     padding: 15px;
     margin: 20px auto;
 }
@@ -82,4 +83,8 @@
 
 #post-alert {
     margin-bottom: 50px;
+}
+
+.space {
+    padding: 10px 0;
 }

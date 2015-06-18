@@ -76,7 +76,7 @@
                             required: true,
                             minlength: 5
                         },
-                        password_again: {
+                        confirmPassword: {
                             required: true,
                             minlength: 5,
                             equalTo: "#password"

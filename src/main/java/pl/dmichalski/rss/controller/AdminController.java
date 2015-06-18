@@ -32,7 +32,7 @@ public class AdminController {
     @RequestMapping("/remove-user/{id}")
     public String removeUserById(@PathVariable Long id) {
         userService.removeUser(id);
-        return "redirect:/show-users";
+        return "redirect:/admin/users";
     }
 
 }

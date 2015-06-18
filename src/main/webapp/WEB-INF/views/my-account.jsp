@@ -46,12 +46,16 @@
                             <spring:message code="page.myAccount.newChannel"/>
                         </button>
 
+                        <div class="space"></div>
+
                         <!-- Nav tabs -->
                         <ul class="nav nav-tabs">
                             <c:forEach items="${user.blogEntities}" var="blog">
                                 <li><a href="#blog_${blog.id}" data-toggle="tab">${blog.name}</a></li>
                             </c:forEach>
                         </ul>
+
+                        <div class="space"></div>
 
                         <!-- Tab panes -->
                         <div class="tab-content">
@@ -64,6 +68,8 @@
                                            class="btn btn-danger triggerRemove">Remove</a>
                                             ${blog.url}
                                     </p>
+
+                                    <div class="space"></div>
 
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
