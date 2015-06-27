@@ -67,9 +67,11 @@ public class InitDbService {
 
         RssFeedEntity rssFeedEntity1 = saveBlog("CNN Top Stories", "http://rss.cnn.com/rss/edition.rss");
         RssFeedEntity rssFeedEntity2 = saveBlog("CNN World", "http://rss.cnn.com/rss/edition_world.rss");
+        RssFeedEntity rssFeedEntity3 = saveBlog("CNN Europe", "http://rss.cnn.com/rss/edition_europe.rss");
 
         saveItems(rssFeedEntity1);
         saveItems(rssFeedEntity2);
+        saveItems(rssFeedEntity3);
 
     }
 
