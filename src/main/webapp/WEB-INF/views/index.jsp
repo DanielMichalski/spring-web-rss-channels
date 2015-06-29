@@ -19,7 +19,6 @@
                 <article class="clearfix">
                     <div class="post-date">
                         <fmt:formatDate value="${item.publishedDate}" pattern="dd-MM-yyyy HH:mm:ss"/>
-                        <span><a href="#">11 komentarzy</a></span>
                     </div>
                     <h2>
                         <a href="<c:out value="${item.link}"/>" target="_blank">${item.title}</a>
