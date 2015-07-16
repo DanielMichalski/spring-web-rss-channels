@@ -22,13 +22,17 @@ public class RssServiceTest {
     }
 
     @Test
-    public void testGetItems() throws RSSException {
+    public void shouldReturnAllXmlItems() throws RSSException {
+        // given
         File file = new File("src/test/resources/javavids.xml");
+
+        // when
         List<RssFeedEntryEntity> itemEntities = rssService.getItems(file);
-        assertThat(10, is(itemEntities.size()));
         RssFeedEntryEntity firstRssFeedEntryEntity = itemEntities.get(0);
+
+        // then
+        assertThat(10, is(itemEntities.size()));
         assertThat("How to solve Source not found error during debug in Eclipse", is(firstRssFeedEntryEntity.getTitle()));
         assertThat("22 06 2014 22:35:49", is(new SimpleDateFormat("dd MM yyyy HH:mm:ss").format(firstRssFeedEntryEntity.getPublishedDate())));
-
     }
 }

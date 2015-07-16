@@ -20,6 +20,7 @@ import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -54,7 +55,7 @@ public class HomeControllerTest {
         mockMvc.perform(get("/").accept(MediaType.APPLICATION_XHTML_XML))
                 .andExpect(view().name("index"))
                 .andExpect(model().attributeExists("items"))
-                .andExpect(status().isOk());
+                .andExpect(status().isOk()).andDo(print());
 
         verify(itemService, times(1))
                 .find10NewestEntries();
