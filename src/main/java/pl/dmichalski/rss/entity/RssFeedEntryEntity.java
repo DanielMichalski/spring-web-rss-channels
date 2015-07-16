@@ -78,15 +78,13 @@ public class RssFeedEntryEntity {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("RssFeedEntryEntity{");
-        sb.append("id=").append(id);
-        sb.append(", title='").append(title).append('\'');
-        sb.append(", description='").append(description).append('\'');
-        sb.append(", publishedDate=").append(publishedDate);
-        sb.append(", link='").append(link).append('\'');
-        sb.append(", rssFeedEntity=").append(rssFeedEntity);
-        sb.append('}');
-        return sb.toString();
+        return "RssFeedEntryEntity{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", publishedDate=" + publishedDate +
+                ", link='" + link + '\'' +
+                ", rssFeedEntity=" + rssFeedEntity +
+                '}';
     }
-
 }

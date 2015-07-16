@@ -13,14 +13,24 @@
     <name>Spring RSS Reader</name>
 
     <properties>
+        <!-- Spring -->
         <spring.version>4.1.1.RELEASE</spring.version>
         <spring-security.version>3.2.5.RELEASE</spring-security.version>
         <spring-data-jpa.version>1.7.0.RELEASE</spring-data-jpa.version>
+
+        <!-- Hibernate -->
         <hibernate.version>4.3.6.Final</hibernate.version>
         <hibernate-validator.version>5.1.2.Final</hibernate-validator.version>
         <apache.tiles.version>3.0.5</apache.tiles.version>
+
+        <!-- Logging-->
         <slf4j.version>1.7.7</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
+
+        <!-- Testing -->
+        <junit.version>4.11</junit.version>
+        <hamcrest-all.version>1.3</hamcrest-all.version>
+        <springockito-annotations.version>1.0.9</springockito-annotations.version>
     </properties>
 
     <dependencyManagement>
@@ -36,10 +46,17 @@
     </dependencyManagement>
 
     <dependencies>
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
@@ -83,6 +100,13 @@
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
             <version>2.3.2</version>
+        </dependency>
+
+        <!-- Google Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
         </dependency>
 
         <!-- PostgreSQL-->
@@ -168,9 +192,24 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.11</version>
+            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-all</artifactId>
+            <version>${hamcrest-all.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.kubek2k</groupId>
+            <artifactId>springockito-annotations</artifactId>
+            <version>${springockito-annotations.version}</version>
+            <scope>test</scope>
+        </dependency>
+
     </dependencies>
 
     <build>

@@ -74,14 +74,12 @@ public class RssFeedEntity {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("RssFeedEntity{");
-        sb.append("id=").append(id);
-        sb.append(", url='").append(url).append('\'');
-        sb.append(", name='").append(name).append('\'');
-        sb.append(", userEntity=").append(userEntity);
-        sb.append(", itemEntities=").append(itemEntities);
-        sb.append('}');
-        return sb.toString();
+        return "RssFeedEntity{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                ", name='" + name + '\'' +
+                ", userEntity=" + userEntity +
+                ", itemEntities=" + itemEntities +
+                '}';
     }
-
 }
