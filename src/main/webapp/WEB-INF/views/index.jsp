@@ -25,7 +25,7 @@
                     </h2>
 
                     <p> ${item.description}
-                        <a href="<c:out value="${item.link}"/>" target="_blank">Czytaj całość</a>
+                        <a href="<c:out value="${item.link}"/>" target="_blank"><spring:message code="page.index.readMore"/></a>
                     </p>
                 </article>
             </c:forEach>
