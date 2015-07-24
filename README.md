@@ -1,4 +1,4 @@
-spring-web-blogs
+Spring Web Blogs
 ================
 
 Spring MVC + JPA/Hibernate + Apache Tiles + Bootstrap + JQuery
