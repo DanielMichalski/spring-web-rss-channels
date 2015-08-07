@@ -57,7 +57,6 @@
         <param-value>true</param-value>
     </context-param>
 
-    <!-- Static resources -->
     <servlet-mapping>
         <servlet-name>default</servlet-name>
         <url-pattern>/static/*</url-pattern>
