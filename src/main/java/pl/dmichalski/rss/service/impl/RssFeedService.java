@@ -65,7 +65,7 @@ public class RssFeedService implements IRssFeedService {
         }
     }
 
-    @Scheduled(fixedDelay = 3600000)
+    @Scheduled(cron = "${pl.dmichalski.rss.service.scheduleCron}")
     public void reloadBlogs() {
         List<RssFeedEntity> blogs = blogRepository.findAll();
         blogs.stream().forEach(this::saveAll);
