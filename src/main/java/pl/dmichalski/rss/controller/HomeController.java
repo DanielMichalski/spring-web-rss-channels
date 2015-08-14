@@ -14,8 +14,12 @@ import pl.dmichalski.rss.service.IRssFeedItemService;
 @RequestMapping("/")
 public class HomeController {
 
-    @Autowired
     private IRssFeedItemService itemService;
+
+    @Autowired
+    public HomeController(IRssFeedItemService itemService) {
+        this.itemService = itemService;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public String index(Model model) {

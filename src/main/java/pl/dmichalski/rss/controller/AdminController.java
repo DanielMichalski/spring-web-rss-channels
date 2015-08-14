@@ -14,8 +14,12 @@ import pl.dmichalski.rss.service.IUserService;
 @RequestMapping("/admin/users")
 public class AdminController {
 
-    @Autowired
     private IUserService userService;
+
+    @Autowired
+    public AdminController(IUserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping
     public String showUsers(Model model) {

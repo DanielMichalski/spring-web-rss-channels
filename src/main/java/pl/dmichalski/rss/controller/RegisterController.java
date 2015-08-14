@@ -17,8 +17,12 @@ import javax.validation.Valid;
 @RequestMapping("/register")
 public class RegisterController {
 
-    @Autowired
     private IUserService userService;
+
+    @Autowired
+    public RegisterController(IUserService userService) {
+        this.userService = userService;
+    }
 
     @RequestMapping
     public String showRegisterForm(Model model) {

@@ -21,11 +21,15 @@ import java.security.Principal;
 @Controller
 public class UserController {
 
-    @Autowired
     private IUserService userService;
 
-    @Autowired
     private IRssFeedService blogService;
+
+    @Autowired
+    public UserController(IUserService userService, IRssFeedService blogService) {
+        this.userService = userService;
+        this.blogService = blogService;
+    }
 
     @RequestMapping("/account")
     public String account(Model model, Principal principal) {

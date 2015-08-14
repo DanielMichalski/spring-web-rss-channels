@@ -20,11 +20,15 @@ import javax.validation.Valid;
 @RequestMapping(value = "/contact")
 public class ContactController {
 
-    @Autowired
-    private IMailService mailService;
-
     @Value("${mail.sender.receiver}")
     private String mailTo;
+
+    private IMailService mailService;
+
+    @Autowired
+    public ContactController(IMailService mailService) {
+        this.mailService = mailService;
+    }
 
     @RequestMapping(method = RequestMethod.GET)
     public String showContactForm(Model model) {
