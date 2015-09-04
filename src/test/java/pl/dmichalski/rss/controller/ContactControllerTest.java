@@ -61,7 +61,6 @@ public class ContactControllerTest {
 
     @Test
     public void testSendEmail() throws Exception {
-        //TODO dokonczyc
         String from = "test@mail.com";
         String message = "Mail message";
         String name = "Name";
