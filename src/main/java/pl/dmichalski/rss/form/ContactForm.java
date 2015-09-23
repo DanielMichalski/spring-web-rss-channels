@@ -45,11 +45,10 @@ public class ContactForm {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("ContactForm{");
-        sb.append("name='").append(name).append('\'');
-        sb.append(", mail='").append(mail).append('\'');
-        sb.append(", message='").append(message).append('\'');
-        sb.append('}');
-        return sb.toString();
+        return "ContactForm{" +
+                "name='" + name + '\'' +
+                ", mail='" + mail + '\'' +
+                ", message='" + message + '\'' +
+                '}';
     }
 }
