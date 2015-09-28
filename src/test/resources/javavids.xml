@@ -98,28 +98,5 @@
             <feedburner:origLink>http://www.javavids.com/video/spring-web-app-tutorial-50-heroku.html
             </feedburner:origLink>
         </item>
-        <item>
-            <title>Spring web app tutorial 49: maven package</title>
-            <description>How to create WAR file in Eclipse using Maven package.&lt;img
-                src="http://feeds.feedburner.com/~r/javavids/~4/qZ-NIc8GIyM" height="1" width="1"/&gt;</description>
-            <link>http://feedproxy.google.com/~r/javavids/~3/qZ-NIc8GIyM/spring-web-app-tutorial-49-maven-package.html
-            </link>
-            <pubDate>Thu, 24 Apr 2014 13:25:58 +0000</pubDate>
-            <feedburner:origLink>http://www.javavids.com/video/spring-web-app-tutorial-49-maven-package.html
-            </feedburner:origLink>
-        </item>
-        <item>
-            <title>Spring web app tutorial 48: Java blog aggregator homepage</title>
-            <description>Creating Java blog aggregator homepage with items from database ordered by published date in
-                descending order.&lt;img src="http://feeds.feedburner.com/~r/javavids/~4/96hVAaLGYQM" height="1"
-                width="1"/&gt;</description>
-            <link>
-                http://feedproxy.google.com/~r/javavids/~3/96hVAaLGYQM/spring-web-app-tutorial-48-java-blog-aggregator-homepage.html
-            </link>
-            <pubDate>Wed, 23 Apr 2014 19:00:37 +0000</pubDate>
-            <feedburner:origLink>
-                http://www.javavids.com/video/spring-web-app-tutorial-48-java-blog-aggregator-homepage.html
-            </feedburner:origLink>
-        </item>
     </channel>
 </rss>
