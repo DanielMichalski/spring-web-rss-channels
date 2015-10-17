@@ -31,7 +31,6 @@ public class UserEntity {
     private String password;
 
     @Transient
-
     private String confirmPassword;
 
     private boolean enabled;

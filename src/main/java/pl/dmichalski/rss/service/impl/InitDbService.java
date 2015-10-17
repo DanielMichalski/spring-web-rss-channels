@@ -40,46 +40,61 @@ public class InitDbService {
     @Autowired
     private IRssFeedService blogService;
 
-    private UserEntity userEntityAdmin;
-
     @PostConstruct
     public void init() throws RSSException {
         if (roleRepository.findByName("ROLE_ADMIN") != null)  return;
 
-        UserRoleEntity userRoleEntityUser = new UserRoleEntity();
-        userRoleEntityUser.setName("ROLE_USER");
-        roleRepository.save(userRoleEntityUser);
+        UserRoleEntity userRole = createUserRole();
+        UserRoleEntity adminRole = createAdminRole();
+        roleRepository.save(userRole);
+        roleRepository.save(adminRole);
 
-        UserRoleEntity userRoleEntityAdmin = new UserRoleEntity();
-        userRoleEntityAdmin.setName("ROLE_ADMIN");
-        roleRepository.save(userRoleEntityAdmin);
+        UserEntity admin = createAdmin();
+        List<UserRoleEntity> roles = createRoles(userRole, adminRole);
+        admin.setRoleEntities(roles);
+        userRepository.save(admin);
 
-        userEntityAdmin = new UserEntity();
-        userEntityAdmin.setEnabled(true);
-        userEntityAdmin.setName("admin");
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        userEntityAdmin.setPassword(encoder.encode("admin"));
-        List<UserRoleEntity> roleEntities = new ArrayList<>();
-        roleEntities.add(userRoleEntityAdmin);
-        roleEntities.add(userRoleEntityUser);
-        userEntityAdmin.setRoleEntities(roleEntities);
-        userRepository.save(userEntityAdmin);
-
-        RssFeedEntity rssFeedEntity1 = saveBlog("CNN Top Stories", "http://rss.cnn.com/rss/edition.rss");
-        RssFeedEntity rssFeedEntity2 = saveBlog("CNN World", "http://rss.cnn.com/rss/edition_world.rss");
-        RssFeedEntity rssFeedEntity3 = saveBlog("CNN Europe", "http://rss.cnn.com/rss/edition_europe.rss");
-
-        saveItems(rssFeedEntity1);
-        saveItems(rssFeedEntity2);
-        saveItems(rssFeedEntity3);
-
+        createBlogs(admin);
     }
 
-    private RssFeedEntity saveBlog(String name, String url) {
+    private UserRoleEntity createUserRole() {
+        UserRoleEntity userRoleEntityUser = new UserRoleEntity();
+        userRoleEntityUser.setName("ROLE_USER");
+        return userRoleEntityUser;
+    }
+
+    private UserRoleEntity createAdminRole() {
+        UserRoleEntity userRoleEntityAdmin = new UserRoleEntity();
+        userRoleEntityAdmin.setName("ROLE_ADMIN");
+        return userRoleEntityAdmin;
+    }
+
+    private List<UserRoleEntity> createRoles(UserRoleEntity userRole, UserRoleEntity adminRole) {
+        List<UserRoleEntity> roleEntities = new ArrayList<>();
+        roleEntities.add(adminRole);
+        roleEntities.add(userRole);
+        return roleEntities;
+    }
+
+    private UserEntity createAdmin() {
+        UserEntity admin = new UserEntity();
+        admin.setEnabled(true);
+        admin.setName("admin");
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        admin.setPassword(encoder.encode("admin"));
+        return admin;
+    }
+
+    private void createBlogs(UserEntity user) throws RSSException {
+        RssFeedEntity rssFeedEntity1 = saveBlog(user, "World News", "http://feeds.skynews.com/feeds/rss/world.xml");
+        saveItems(rssFeedEntity1);
+    }
+
+    private RssFeedEntity saveBlog(UserEntity user, String name, String url) {
         RssFeedEntity rssFeedEntity = new RssFeedEntity();
         rssFeedEntity.setName(name);
         rssFeedEntity.setUrl(url);
-        rssFeedEntity.setUserEntity(userEntityAdmin);
+        rssFeedEntity.setUserEntity(user);
         blogRepository.save(rssFeedEntity);
         return rssFeedEntity;
     }
