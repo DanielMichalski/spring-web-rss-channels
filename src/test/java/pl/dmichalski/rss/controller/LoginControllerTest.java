@@ -17,7 +17,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(locations = {"file:src/main/webapp/WEB-INF/spring/web-mvc-config.xml",
+@ContextConfiguration(locations = {
+        "file:src/main/webapp/WEB-INF/spring/web-mvc-config.xml",
         "file:src/main/resources/spring/spring-root.xml",
         "file:src/main/resources/spring/store/spring-data-dev.xml"})
 @WebAppConfiguration

@@ -7,6 +7,7 @@ import java.util.Date;
  * Author: Daniel
  */
 @Entity
+@Table(name = "rss_feed_entry")
 public class RssFeedEntryEntity {
 
     @Id

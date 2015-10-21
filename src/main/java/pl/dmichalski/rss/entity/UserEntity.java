@@ -30,9 +30,6 @@ public class UserEntity {
     @Size(min = 5, message = "Password must be at least 5 characters!")
     private String password;
 
-    @Transient
-    private String confirmPassword;
-
     private boolean enabled;
 
     @ManyToMany
@@ -41,6 +38,9 @@ public class UserEntity {
 
     @OneToMany(mappedBy = "userEntity", cascade = CascadeType.REMOVE)
     private List<RssFeedEntity> blogEntities;
+
+    @ManyToOne
+    private CountryEntity countryEntity;
 
     public Long getId() {
         return id;
@@ -90,20 +90,20 @@ public class UserEntity {
         this.blogEntities = blogEntities;
     }
 
-    public String getConfirmPassword() {
-        return confirmPassword;
-    }
-
-    public void setConfirmPassword(String confirmPassword) {
-        this.confirmPassword = confirmPassword;
-    }
-
     public boolean isEnabled() {
         return enabled;
     }
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public CountryEntity getCountryEntity() {
+        return countryEntity;
+    }
+
+    public void setCountryEntity(CountryEntity countryEntity) {
+        this.countryEntity = countryEntity;
     }
 
     @Override
@@ -113,10 +113,10 @@ public class UserEntity {
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", confirmPassword='" + confirmPassword + '\'' +
                 ", enabled=" + enabled +
                 ", roleEntities=" + roleEntities +
                 ", blogEntities=" + blogEntities +
+                ", countryEntity=" + countryEntity +
                 '}';
     }
 }

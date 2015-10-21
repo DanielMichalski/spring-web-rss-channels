@@ -4,12 +4,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmichalski.rss.entity.RssFeedEntity;
-import pl.dmichalski.rss.entity.RssFeedEntryEntity;
-import pl.dmichalski.rss.entity.UserRoleEntity;
-import pl.dmichalski.rss.entity.UserEntity;
+import pl.dmichalski.rss.entity.*;
 import pl.dmichalski.rss.exception.RSSException;
 import pl.dmichalski.rss.repository.BlogRepository;
+import pl.dmichalski.rss.repository.CountryRepository;
 import pl.dmichalski.rss.repository.RoleRepository;
 import pl.dmichalski.rss.repository.UserRepository;
 import pl.dmichalski.rss.service.IRssFeedService;
@@ -35,6 +33,9 @@ public class InitDbService {
     private BlogRepository blogRepository;
 
     @Autowired
+    private CountryRepository countryRepository;
+
+    @Autowired
     private RssService rssService;
 
     @Autowired
@@ -52,6 +53,7 @@ public class InitDbService {
         UserEntity admin = createAdmin();
         List<UserRoleEntity> roles = createRoles(userRole, adminRole);
         admin.setRoleEntities(roles);
+        admin.setCountryEntity(createAndSaveCountry());
         userRepository.save(admin);
 
         createBlogs(admin);
@@ -103,6 +105,13 @@ public class InitDbService {
         List<RssFeedEntryEntity> itemEntities = rssService.getItems(rssFeedEntity.getUrl());
         rssFeedEntity.setItemEntities(itemEntities);
         blogService.saveAll(rssFeedEntity);
+    }
+
+    private CountryEntity createAndSaveCountry() {
+        CountryEntity countryEntity = new CountryEntity();
+        countryEntity.setContryName("Poland");
+        countryRepository.save(countryEntity);
+        return countryEntity;
     }
 
 }

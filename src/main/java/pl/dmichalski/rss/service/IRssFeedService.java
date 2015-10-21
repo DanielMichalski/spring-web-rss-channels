@@ -11,7 +11,7 @@ public interface IRssFeedService {
 
     void saveAll(RssFeedEntity rssFeedEntity);
 
-    void reloadBlogs();
+    void reloadChannels();
 
     RssFeedEntity findOne(Long id);
 

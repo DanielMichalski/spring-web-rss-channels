@@ -10,7 +10,7 @@ import java.util.List;
  * Author: Daniel
  */
 @Entity
-@Table
+@Table(name = "rss_feed")
 public class RssFeedEntity {
 
     @Id

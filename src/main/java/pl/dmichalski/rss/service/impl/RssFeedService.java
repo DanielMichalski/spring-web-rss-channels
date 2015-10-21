@@ -53,22 +53,22 @@ public class RssFeedService implements IRssFeedService {
     public void saveAll(RssFeedEntity rssFeedEntity) {
         try {
             List<RssFeedEntryEntity> itemEntities = rssService.getItems(rssFeedEntity.getUrl());
-            for (RssFeedEntryEntity rssFeedEntryEntity : itemEntities) {
-                RssFeedEntryEntity savedRssFeedEntryEntity = itemRepository.findByRssFeedEntityAndLink(rssFeedEntity, rssFeedEntryEntity.getLink());
+            itemEntities.forEach(entry -> {
+                RssFeedEntryEntity savedRssFeedEntryEntity =
+                        itemRepository.findByRssFeedEntityAndLink(rssFeedEntity, entry.getLink());
                 if (savedRssFeedEntryEntity == null) {
-                    rssFeedEntryEntity.setRssFeedEntity(rssFeedEntity);
-                    itemRepository.save(rssFeedEntryEntity);
+                    entry.setRssFeedEntity(rssFeedEntity);
+                    itemRepository.save(entry);
                 }
-            }
+            });
         } catch (RSSException e) {
             logger.error("Could not save blog", e);
         }
     }
 
     @Scheduled(cron = "${pl.dmichalski.rss.service.scheduleCron}")
-    public void reloadBlogs() {
-        List<RssFeedEntity> blogs = blogRepository.findAll();
-        blogs.stream().forEach(this::saveAll);
+    public void reloadChannels() {
+        blogRepository.findAll().stream().forEach(this::saveAll);
     }
 
     @Override

@@ -31,7 +31,7 @@ public class RssServiceTest {
         RssFeedEntryEntity firstRssFeedEntryEntity = itemEntities.get(0);
 
         // then
-        assertThat(10, is(itemEntities.size()));
+        assertThat(8, is(itemEntities.size()));
         assertThat("How to solve Source not found error during debug in Eclipse", is(firstRssFeedEntryEntity.getTitle()));
         assertThat("22 06 2014 22:35:49", is(new SimpleDateFormat("dd MM yyyy HH:mm:ss").format(firstRssFeedEntryEntity.getPublishedDate())));
     }

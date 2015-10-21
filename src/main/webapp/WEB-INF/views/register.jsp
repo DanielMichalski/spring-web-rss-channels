@@ -33,14 +33,13 @@
                     <div class="form-group">
                         <label for="password" class=""><spring:message
                                 code="page.register.password"/></label>
-                        <form:password path="password" cssClass="form-control"/>
+                        <form:password path="password" id="chpw" name="chpw" cssClass="form-control"/>
                         <form:errors path="password"/>
                     </div>
                     <div class="form-group">
-                        <label for="password" class=""><spring:message
+                        <label for="chpw2" class=""><spring:message
                                 code="page.register.confirmPassword"/></label>
-                        <form:password path="confirmPassword" cssClass="form-control"/>
-                        <form:errors path="confirmPassword"/>
+                        <input type="password" id="chpw2" name="chpw2" class="form-control"/>
                     </div>
                     <button type="submit" class="btn btn-default"><spring:message
                             code="page.register.submit"/></button>
@@ -72,14 +71,14 @@
                             required: true,
                             email: true
                         },
-                        password: {
+                        chpw: {
                             required: true,
                             minlength: 5
                         },
-                        confirmPassword: {
+                        chpw2: {
                             required: true,
                             minlength: 5,
-                            equalTo: "#password"
+                            equalTo: "#chpw"
                         }
                     },
                     highlight: function (element) {
@@ -94,6 +93,6 @@
                         }
                     }
                 }
-        )
+        );
     });
 </script>
