@@ -5,9 +5,12 @@
 
 <div id="start" class="form-login">
     <div class="panel panel-success">
-        <div class="panel-heading"><spring:message code="page.login.header.title"/></div>
+        <div class="panel-heading">
+            <spring:message code="page.login.header.title"/>
+        </div>
         <div class="panel-body">
-            <form class="form-signin" role="form" action="<spring:url value="/j_spring_security_check"/>" method="POST">
+            <form class="form-signin" role="form" method="POST"
+                  action="<spring:url value="/j_spring_security_check"/>">
                 <label for="j_username"><spring:message code="page.login.login"/></label>
                 <input type="text" id="j_username" name="j_username" class="form-control"
                        placeholder="<spring:message code="page.login.login"/>" required autofocus>

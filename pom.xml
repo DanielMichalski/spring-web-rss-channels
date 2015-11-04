@@ -16,27 +16,22 @@
         <!-- Basic -->
         <java.source>1.8</java.source>
         <java.target>1.8</java.target>
-
         <!-- Spring -->
         <spring.version>4.1.6.RELEASE</spring.version>
         <spring-security.version>3.2.5.RELEASE</spring-security.version>
         <spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
-
         <!-- Hibernate -->
         <hibernate.version>4.3.10.Final</hibernate.version>
         <hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
         <apache.tiles.version>3.0.5</apache.tiles.version>
-
         <!-- Logging-->
         <slf4j.version>1.7.12</slf4j.version>
         <log4j.version>1.2.17</log4j.version>
-
         <!-- Testing -->
         <junit.version>4.12</junit.version>
         <hamcrest-all.version>1.3</hamcrest-all.version>
         <springockito-annotations.version>1.0.9</springockito-annotations.version>
         <guava.version>18.0</guava.version>
-
         <!-- Other -->
         <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
     </properties>
