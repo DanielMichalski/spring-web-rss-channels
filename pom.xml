@@ -36,6 +36,7 @@
         <!-- Other -->
         <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
         <jstl.version>1.2</jstl.version>
+        <hsqldb.version>2.3.2</hsqldb.version>
     </properties>
 
     <dependencyManagement>
@@ -104,7 +105,7 @@
         <dependency>
             <groupId>org.hsqldb</groupId>
             <artifactId>hsqldb</artifactId>
-            <version>2.3.2</version>
+            <version>${hsqldb.version}</version>
         </dependency>
 
         <!-- Google Guava -->
