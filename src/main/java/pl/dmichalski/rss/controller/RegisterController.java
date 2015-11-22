@@ -41,7 +41,7 @@ public class RegisterController {
         return "redirect:register?registered=true";
     }
 
-    @RequestMapping("/is-available")
+    @RequestMapping("is-available")
     @ResponseBody
     public String available(@RequestParam String username) {
         Boolean available = userService.findOne(username) == null;

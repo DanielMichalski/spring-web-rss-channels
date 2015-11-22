@@ -31,7 +31,7 @@ public class UserController {
         this.blogService = blogService;
     }
 
-    @RequestMapping("/account")
+    @RequestMapping("account")
     public String account(Model model, Principal principal) {
         String userName = principal.getName();
         model.addAttribute("blog", new RssFeedEntity());
@@ -39,7 +39,7 @@ public class UserController {
         return "account";
     }
 
-    @RequestMapping(value = "/account", method = RequestMethod.POST)
+    @RequestMapping(value = "account", method = RequestMethod.POST)
     public String doAddBlog(@Valid @ModelAttribute("blog") RssFeedEntity rssFeedEntity, Model model,
                             Principal principal, BindingResult result) {
         if (result.hasErrors()) {
@@ -50,7 +50,7 @@ public class UserController {
         return "redirect:/account";
     }
 
-    @RequestMapping(value = "/blog/remove/{id}")
+    @RequestMapping(value = "blog/remove/{id}")
     public String removeBlog(@PathVariable Long id) {
         RssFeedEntity rssFeedEntity = blogService.findOne(id);
         blogService.delete(rssFeedEntity);

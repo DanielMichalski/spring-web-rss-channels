@@ -27,13 +27,13 @@ public class AdminController {
         return "show-users";
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("{id}")
     public String userDetail(@PathVariable Long id, Model model) {
         model.addAttribute("user", userService.findOneWithAllBlogs(id));
         return "user-detail";
     }
 
-    @RequestMapping("/remove-user/{id}")
+    @RequestMapping("remove-user/{id}")
     public String removeUserById(@PathVariable Long id) {
         userService.removeUser(id);
         return "redirect:/admin/users";
