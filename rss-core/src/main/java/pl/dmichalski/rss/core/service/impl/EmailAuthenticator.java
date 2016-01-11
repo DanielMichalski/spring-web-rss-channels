@@ -11,7 +11,7 @@ public class EmailAuthenticator extends Authenticator {
 
     @Value("${mail.sender.username}")
     private String username;
-    
+
     @Value("${mail.sender.password}")
     private String password;
 
