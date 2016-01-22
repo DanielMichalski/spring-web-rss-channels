@@ -39,3 +39,6 @@ It contains some useful configuration items:
 
 
 ![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen5.png "Screen 5")
+
+
+![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen6.png "Screen 6")
