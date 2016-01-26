@@ -1,5 +1,5 @@
 Spring Web Blogs
-================
+---------------------------------------------
 
 Spring MVC + JPA/Hibernate + Apache Tiles + Bootstrap + JQuery
 
@@ -21,6 +21,25 @@ It contains some useful configuration items:
 - Spring profiles
 
 
+Running application
+---------------------------------------------
+```bash
+## From base directory build app
+mvn clean install
+
+## Go to rss-web directory
+cd rss-web
+
+## Run tomcat7 server and deploy app
+mvn tomcat7:run-war
+
+## In Your browser go to URL address
+http://localhost:8081/rss-web/
+```
+
+
+Screens
+---------------------------------------------
 
 ![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen1.png "Screen 1")
 
