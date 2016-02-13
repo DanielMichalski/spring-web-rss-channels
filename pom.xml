@@ -45,6 +45,9 @@
         <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
         <jstl.version>1.2</jstl.version>
         <hsqldb.version>2.3.2</hsqldb.version>
+        <commons-dbcp.version>1.4</commons-dbcp.version>
+        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
+        <javax.servlet.jsp-api.version>2.2.1</javax.servlet.jsp-api.version>
     </properties>
 
     <dependencyManagement>
@@ -133,7 +136,7 @@
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
-            <version>1.4</version>
+            <version>${commons-dbcp.version}</version>
         </dependency>
 
         <!-- PostgreSQL-->
@@ -159,14 +162,14 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
+            <version>${javax.servlet-api.version}</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>2.2.1</version>
+            <version>${javax.servlet.jsp-api.version}</version>
             <scope>provided</scope>
         </dependency>
 
