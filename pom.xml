@@ -22,7 +22,7 @@
         <java.source>1.8</java.source>
         <java.target>1.8</java.target>
         <!-- Spring -->
-        <spring.version>4.1.6.RELEASE</spring.version>
+        <spring.version>4.2.4.RELEASE</spring.version>
         <spring-security.version>3.2.5.RELEASE</spring-security.version>
         <spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
         <!-- Hibernate -->
