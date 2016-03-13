@@ -35,6 +35,11 @@ mvn tomcat7:run-war
 http://localhost:8081/rss-web/
 ```
 
+Video
+---------------------------------------------
+
+[![See on YouTube](http://img.youtube.com/vi/68HH3668UMQ/0.jpg)](https://www.youtube.com/watch?v=68HH3668UMQ)
+
 
 Screens
 ---------------------------------------------
