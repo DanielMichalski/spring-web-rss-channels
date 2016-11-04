@@ -35,17 +35,22 @@ mvn tomcat7:run-war
 http://localhost:8081/rss-web/
 ```
 
+Video
+-----
+
+[![Spring Web RSS Channels](http://img.youtube.com/vi/5fvERzlhdZU/0.jpg)](http://www.youtube.com/watch?v=5fvERzlhdZU "Spring Web RSS Channels")
+
 Screens
 ---------------------------------------------
 
-![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen1.png "Screen 1")
+![alt text](http://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen1.png "Screen 1")
 
-![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen2.png "Screen 2")
+![alt text](http://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen2.png "Screen 2")
 
-![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen3.png "Screen 3")
+![alt text](http://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen3.png "Screen 3")
 
-![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen4.png "Screen 4")
+![alt text](http://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen4.png "Screen 4")
 
-![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen5.png "Screen 5")
+![alt text](http://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen5.png "Screen 5")
 
-![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen6.png "Screen 6")
+![alt text](http://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen6.png "Screen 6")
