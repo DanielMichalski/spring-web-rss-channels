@@ -14,19 +14,19 @@
         <version>1.0</version>
     </parent>
 
+    <name>Spring RSS Reader :: Web</name>
+
     <properties>
         <tomcat7-maven-plugin.port>8081</tomcat7-maven-plugin.port>
         <jetty-maven-plugin.port>8082</jetty-maven-plugin.port>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>pl.dmichalski</groupId>
             <artifactId>rss-core</artifactId>
             <version>1.0</version>
         </dependency>
-
     </dependencies>
 
     <build>

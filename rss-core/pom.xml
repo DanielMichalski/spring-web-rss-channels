@@ -12,6 +12,8 @@
         <version>1.0</version>
     </parent>
 
+    <name>Spring RSS Reader :: Core</name>
+
     <build>
         <plugins>
             <plugin>
