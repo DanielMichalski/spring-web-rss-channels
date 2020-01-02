@@ -5,6 +5,7 @@ This project is Spring MVC + JPA/Hibernate Web application.
 
 It contains some useful configuration items:
 
+- Java 8
 - Spring MVC
 - Spring Data Repositories
 - JPA + Hibernate
