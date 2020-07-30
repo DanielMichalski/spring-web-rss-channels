@@ -1,39 +1,52 @@
 Spring Web RSS Channels
 ---------------------------------------------
+This project aims to present how to create a Spring MVC + JPA/Hibernate Web application.
 
-This project is Spring MVC + JPA/Hibernate Web application.
-
-It contains some useful configuration items:
-
-- Java 8
-- Spring MVC
-- Spring Data Repositories
-- JPA + Hibernate
-- Spring Security
+Libraries
+---------------------------------------------
+- Spring Security and Data Repositories
+- JPA (Hibernate)
 - Twitter Bootstrap
 - Apache Tiles
-- Autowired logger
-- Internationalization
 - JQuery + Ajax
 - JQuery validator
-- Sending mail using Spring + Java API
-- Spring profiles
+- Java Mail API
 
+Requirements
+---------------------------------------------
+- [Java JDK 8](https://www.oracle.com/pl/java/technologies/javase/javase-jdk8-downloads.html)
 
 How to run application
 ---------------------------------------------
+On Windows
 ```bash
-## From base directory build app
-mvn clean install
+## Build application from base directory using Maven Wrapper
+mvnw.cmd clean install
 
-## Go to rss-web directory
-cd rss-web
+## Run tomcat7 server and deploy the application
+mvnw.cmd tomcat7:run-war -pl rss-web
 
-## Run tomcat7 server and deploy app
-mvn tomcat7:run-war
-
-## In Your browser go to URL address
+## Application should be accessible at
 http://localhost:8081/rss-web/
+```
+
+On MacOS/ Linux
+```bash
+## Build application from base directory using Maven Wrapper
+./mvnw clean install
+
+## Run tomcat7 server and deploy the application
+./mvnw tomcat7:run-war -pl rss-web
+
+## Application should be accessible at
+http://localhost:8081/rss-web/
+```
+
+Application user
+---------------
+```
+login: admin
+password: secret
 ```
 
 Video

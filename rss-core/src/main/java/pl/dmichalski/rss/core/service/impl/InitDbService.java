@@ -83,7 +83,7 @@ public class InitDbService {
         admin.setEnabled(true);
         admin.setName("admin");
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        admin.setPassword(encoder.encode("admin"));
+        admin.setPassword(encoder.encode("secret"));
         return admin;
     }
 

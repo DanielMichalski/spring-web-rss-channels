@@ -1,3 +1,4 @@
-.idea/
-target/
+.idea
+.mvn/wrapper/maven-wrapper.jar
 *.iml
+target

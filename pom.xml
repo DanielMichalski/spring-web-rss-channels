@@ -6,8 +6,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>pl.dmichalski</groupId>
-    <artifactId>rss</artifactId>
+    <artifactId>spring-web-rss-channels</artifactId>
     <version>1.0</version>
+    <name>Spring RSS Reader</name>
     <packaging>pom</packaging>
 
     <modules>
@@ -15,11 +16,7 @@
         <module>rss-web</module>
     </modules>
 
-    <name>Spring RSS Reader</name>
-
     <properties>
-        <java.source>1.8</java.source>
-        <java.target>1.8</java.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <spring.version>4.2.4.RELEASE</spring.version>
@@ -43,6 +40,8 @@
         <commons-dbcp.version>1.4</commons-dbcp.version>
         <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
         <javax.servlet.jsp-api.version>2.2.1</javax.servlet.jsp-api.version>
+        <java.source>1.8</java.source>
+        <java.target>1.8</java.target>
     </properties>
 
     <dependencyManagement>
@@ -228,7 +227,6 @@
             <version>${json-path.version}</version>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
     <build>
