@@ -1,5 +1,12 @@
 package pl.dmichalski.rss.core.service.impl;
 
+import java.util.Properties;
+import javax.mail.Message;
+import javax.mail.MessagingException;
+import javax.mail.Session;
+import javax.mail.Transport;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,14 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import pl.dmichalski.rss.core.service.IMailService;
 import pl.dmichalski.rss.core.util.log.AutowiredLogger;
-
-import javax.mail.Message;
-import javax.mail.MessagingException;
-import javax.mail.Session;
-import javax.mail.Transport;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeMessage;
-import java.util.Properties;
 
 @Service
 public class MailService implements IMailService {
@@ -40,7 +39,7 @@ public class MailService implements IMailService {
     public boolean sendEMail(String from, String to, String subject, String text) {
         try {
             Session session =
-                   Session.getInstance(getProperties(), emailAuthenticator);
+                    Session.getInstance(getProperties(), emailAuthenticator);
 
             Message message = createMessage(from, to, subject, text, session);
             Transport.send(message);

@@ -1,18 +1,20 @@
-
 package pl.dmichalski.rss.core.rss;
 
-import javax.xml.bind.annotation.*;
 import java.math.BigInteger;
-
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 /**
- * Specifies a web service that supports the rssCloud interface which can be implemented in HTTP-POST, XML-RPC or SOAP 1.1. 
+ * Specifies a web service that supports the rssCloud interface which can be implemented in HTTP-POST, XML-RPC or SOAP 1.1.
  * Its purpose is to allow processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.
- * 
+ *
  * <p>Java class for tCloud complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tCloud">
  *   &lt;complexContent>
@@ -26,8 +28,6 @@ import java.math.BigInteger;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tCloud")
@@ -47,11 +47,9 @@ public class TCloud {
 
     /**
      * Gets the value of the domain property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDomain() {
         return domain;
@@ -59,11 +57,9 @@ public class TCloud {
 
     /**
      * Sets the value of the domain property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDomain(String value) {
         this.domain = value;
@@ -71,11 +67,9 @@ public class TCloud {
 
     /**
      * Gets the value of the port property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @return possible object is
+     * {@link BigInteger }
      */
     public BigInteger getPort() {
         return port;
@@ -83,11 +77,9 @@ public class TCloud {
 
     /**
      * Sets the value of the port property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link BigInteger }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link BigInteger }
      */
     public void setPort(BigInteger value) {
         this.port = value;
@@ -95,11 +87,9 @@ public class TCloud {
 
     /**
      * Gets the value of the path property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getPath() {
         return path;
@@ -107,11 +97,9 @@ public class TCloud {
 
     /**
      * Sets the value of the path property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setPath(String value) {
         this.path = value;
@@ -119,11 +107,9 @@ public class TCloud {
 
     /**
      * Gets the value of the registerProcedure property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getRegisterProcedure() {
         return registerProcedure;
@@ -131,11 +117,9 @@ public class TCloud {
 
     /**
      * Sets the value of the registerProcedure property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setRegisterProcedure(String value) {
         this.registerProcedure = value;
@@ -143,11 +127,9 @@ public class TCloud {
 
     /**
      * Gets the value of the protocol property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link TCloudProtocol }
-     *     
+     *
+     * @return possible object is
+     * {@link TCloudProtocol }
      */
     public TCloudProtocol getProtocol() {
         return protocol;
@@ -155,11 +137,9 @@ public class TCloud {
 
     /**
      * Sets the value of the protocol property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link TCloudProtocol }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link TCloudProtocol }
      */
     public void setProtocol(TCloudProtocol value) {
         this.protocol = value;

@@ -1,20 +1,24 @@
 package pl.dmichalski.rss.core.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmichalski.rss.core.entity.*;
+import pl.dmichalski.rss.core.entity.CountryEntity;
+import pl.dmichalski.rss.core.entity.RssFeedEntity;
+import pl.dmichalski.rss.core.entity.RssFeedEntryEntity;
+import pl.dmichalski.rss.core.entity.UserEntity;
+import pl.dmichalski.rss.core.entity.UserRoleEntity;
 import pl.dmichalski.rss.core.exception.RSSException;
 import pl.dmichalski.rss.core.repository.BlogRepository;
 import pl.dmichalski.rss.core.repository.CountryRepository;
 import pl.dmichalski.rss.core.repository.RoleRepository;
 import pl.dmichalski.rss.core.repository.UserRepository;
 import pl.dmichalski.rss.core.service.IRssFeedService;
-
-import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Author: Daniel
@@ -43,7 +47,9 @@ public class InitDbService {
 
     @PostConstruct
     public void init() throws RSSException {
-        if (roleRepository.findByName("ROLE_ADMIN") != null)  return;
+        if (roleRepository.findByName("ROLE_ADMIN") != null) {
+            return;
+        }
 
         UserRoleEntity userRole = createUserRole();
         UserRoleEntity adminRole = createAdminRole();

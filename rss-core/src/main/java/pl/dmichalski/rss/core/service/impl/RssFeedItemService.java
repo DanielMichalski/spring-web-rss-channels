@@ -1,5 +1,7 @@
 package pl.dmichalski.rss.core.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -7,8 +9,6 @@ import org.springframework.stereotype.Service;
 import pl.dmichalski.rss.core.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.core.repository.ItemRepository;
 import pl.dmichalski.rss.core.service.IRssFeedItemService;
-
-import java.util.List;
 
 /**
  * Author: Daniel

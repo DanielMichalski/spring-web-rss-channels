@@ -1,5 +1,8 @@
 package pl.dmichalski.rss.core.service.impl;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -15,9 +18,6 @@ import pl.dmichalski.rss.core.repository.ItemRepository;
 import pl.dmichalski.rss.core.repository.RoleRepository;
 import pl.dmichalski.rss.core.repository.UserRepository;
 import pl.dmichalski.rss.core.service.IUserService;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Author: Daniel
@@ -39,7 +39,7 @@ public class UserService implements IUserService {
     private RoleRepository roleRepository;
 
     @Override
-    public List<UserEntity> findAll(){
+    public List<UserEntity> findAll() {
         return userRepository.findAll();
     }
 

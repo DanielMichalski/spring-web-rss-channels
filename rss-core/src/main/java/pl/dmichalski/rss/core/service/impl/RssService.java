@@ -1,5 +1,19 @@
 package pl.dmichalski.rss.core.service.impl;
 
+import java.io.File;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
+
 import org.springframework.stereotype.Service;
 import pl.dmichalski.rss.core.entity.RssFeedEntryEntity;
 import pl.dmichalski.rss.core.exception.RSSException;
@@ -9,25 +23,11 @@ import pl.dmichalski.rss.core.rss.TRssChannel;
 import pl.dmichalski.rss.core.rss.TRssItem;
 import pl.dmichalski.rss.core.service.IRssService;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Unmarshaller;
-import javax.xml.transform.Source;
-import javax.xml.transform.stream.StreamSource;
-import java.io.File;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-
 /**
  * Author: Daniel
  */
 @Service
-public class RssService implements IRssService{
+public class RssService implements IRssService {
 
     private List<RssFeedEntryEntity> getItems(Source source) throws RSSException {
         List<RssFeedEntryEntity> list = new ArrayList<>();

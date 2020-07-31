@@ -1,14 +1,16 @@
-
 package pl.dmichalski.rss.core.rss;
 
-import javax.xml.bind.annotation.*;
-
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  * <p>Java class for tImage complex type.
- * 
+ *
  * <p>The following schema fragment specifies the expected content contained within this class.
- * 
+ *
  * <pre>
  * &lt;complexType name="tImage">
  *   &lt;complexContent>
@@ -25,17 +27,15 @@ import javax.xml.bind.annotation.*;
  *   &lt;/complexContent>
  * &lt;/complexType>
  * </pre>
- * 
- * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "tImage", propOrder = {
-    "url",
-    "title",
-    "link",
-    "width",
-    "height",
-    "description"
+        "url",
+        "title",
+        "link",
+        "width",
+        "height",
+        "description"
 })
 public class TImage {
 
@@ -57,11 +57,9 @@ public class TImage {
 
     /**
      * Gets the value of the url property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getUrl() {
         return url;
@@ -69,11 +67,9 @@ public class TImage {
 
     /**
      * Sets the value of the url property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setUrl(String value) {
         this.url = value;
@@ -81,11 +77,9 @@ public class TImage {
 
     /**
      * Gets the value of the title property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getTitle() {
         return title;
@@ -93,11 +87,9 @@ public class TImage {
 
     /**
      * Sets the value of the title property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setTitle(String value) {
         this.title = value;
@@ -105,11 +97,9 @@ public class TImage {
 
     /**
      * Gets the value of the link property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getLink() {
         return link;
@@ -117,11 +107,9 @@ public class TImage {
 
     /**
      * Sets the value of the link property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setLink(String value) {
         this.link = value;
@@ -129,11 +117,9 @@ public class TImage {
 
     /**
      * Gets the value of the width property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is
+     * {@link Integer }
      */
     public Integer getWidth() {
         return width;
@@ -141,11 +127,9 @@ public class TImage {
 
     /**
      * Sets the value of the width property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Integer }
      */
     public void setWidth(Integer value) {
         this.width = value;
@@ -153,11 +137,9 @@ public class TImage {
 
     /**
      * Gets the value of the height property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link Integer }
-     *     
+     *
+     * @return possible object is
+     * {@link Integer }
      */
     public Integer getHeight() {
         return height;
@@ -165,11 +147,9 @@ public class TImage {
 
     /**
      * Sets the value of the height property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link Integer }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link Integer }
      */
     public void setHeight(Integer value) {
         this.height = value;
@@ -177,11 +157,9 @@ public class TImage {
 
     /**
      * Gets the value of the description property.
-     * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
+     *
+     * @return possible object is
+     * {@link String }
      */
     public String getDescription() {
         return description;
@@ -189,11 +167,9 @@ public class TImage {
 
     /**
      * Sets the value of the description property.
-     * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
+     *
+     * @param value allowed object is
+     *              {@link String }
      */
     public void setDescription(String value) {
         this.description = value;

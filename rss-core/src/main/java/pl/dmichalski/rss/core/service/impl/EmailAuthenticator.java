@@ -1,10 +1,10 @@
 package pl.dmichalski.rss.core.service.impl;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
 
 @Component
 public class EmailAuthenticator extends Authenticator {

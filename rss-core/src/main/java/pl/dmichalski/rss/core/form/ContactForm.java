@@ -1,8 +1,8 @@
 package pl.dmichalski.rss.core.form;
 
-import org.hibernate.validator.constraints.Email;
-
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
 
 /**
  * Author: dmichalski

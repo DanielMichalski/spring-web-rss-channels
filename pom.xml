@@ -1,248 +1,246 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+	<modelVersion>4.0.0</modelVersion>
 
-    <groupId>pl.dmichalski</groupId>
-    <artifactId>spring-web-rss-channels</artifactId>
-    <version>1.0</version>
-    <name>Spring RSS Reader</name>
-    <packaging>pom</packaging>
+	<groupId>pl.dmichalski</groupId>
+	<artifactId>spring-web-rss-channels</artifactId>
+	<version>1.0</version>
+	<name>Spring RSS Reader</name>
+	<packaging>pom</packaging>
 
-    <modules>
-        <module>rss-core</module>
-        <module>rss-web</module>
-    </modules>
+	<modules>
+		<module>rss-core</module>
+		<module>rss-web</module>
+	</modules>
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <spring.version>4.2.4.RELEASE</spring.version>
-        <spring-security.version>3.2.5.RELEASE</spring-security.version>
-        <spring-data-jpa.version>1.8.0.RELEASE</spring-data-jpa.version>
-        <hibernate.version>4.3.10.Final</hibernate.version>
-        <hibernate-validator.version>5.1.3.Final</hibernate-validator.version>
-        <apache.tiles.version>3.0.5</apache.tiles.version>
-        <slf4j.version>1.7.12</slf4j.version>
-        <log4j.version>1.2.17</log4j.version>
-        <junit.version>4.12</junit.version>
-        <hamcrest-all.version>1.3</hamcrest-all.version>
-        <springockito-annotations.version>1.0.9</springockito-annotations.version>
-        <guava.version>18.0</guava.version>
-        <json-path.version>0.9.0</json-path.version>
-        <maven-compiler-plugin.version>3.3</maven-compiler-plugin.version>
-        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
-        <postgresql.version>9.1-901-1.jdbc4</postgresql.version>
-        <jstl.version>1.2</jstl.version>
-        <hsqldb.version>2.3.2</hsqldb.version>
-        <commons-dbcp.version>1.4</commons-dbcp.version>
-        <javax.servlet-api.version>3.1.0</javax.servlet-api.version>
-        <javax.servlet.jsp-api.version>2.2.1</javax.servlet.jsp-api.version>
-        <java.source>1.8</java.source>
-        <java.target>1.8</java.target>
-    </properties>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<spring.version>5.2.8.RELEASE</spring.version>
+		<spring-security.version>5.3.3.RELEASE</spring-security.version>
+		<spring-data-jpa.version>2.3.2.RELEASE</spring-data-jpa.version>
+		<hibernate.version>5.4.19.Final</hibernate.version>
+		<hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
+		<apache.tiles.version>3.0.8</apache.tiles.version>
+		<slf4j.version>1.7.30</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+		<junit.version>4.13</junit.version>
+		<hamcrest-all.version>1.3</hamcrest-all.version>
+		<springockito-annotations.version>1.0.9</springockito-annotations.version>
+		<guava.version>29.0-jre</guava.version>
+		<json-path.version>2.4.0</json-path.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
+		<maven-jar-plugin.version>2.5</maven-jar-plugin.version>
+		<postgresql.version>9.1-901-1.jdbc4</postgresql.version>
+		<jstl.version>1.2</jstl.version>
+		<hsqldb.version>2.5.1</hsqldb.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+		<javax.servlet-api.version>4.0.1</javax.servlet-api.version>
+		<javax.servlet.jsp-api.version>2.3.3</javax.servlet.jsp-api.version>
+		<java.source>1.8</java.source>
+		<java.target>1.8</java.target>
+	</properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework</groupId>
-                <artifactId>spring-framework-bom</artifactId>
-                <version>${spring.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-framework-bom</artifactId>
+				<version>${spring.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-    <dependencies>
+	<dependencies>
 
-        <!-- Spring -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-        </dependency>
+		<!-- Spring -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-taglibs</artifactId>
-            <version>${spring-security.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>${spring-security.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-jpa</artifactId>
-            <version>${spring-data-jpa.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-jpa</artifactId>
+			<version>${spring-data-jpa.version}</version>
+		</dependency>
 
-        <!-- Hibernate -->
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-entitymanager</artifactId>
-            <version>${hibernate.version}</version>
-        </dependency>
+		<!-- Hibernate -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-validator</artifactId>
-            <version>${hibernate-validator.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>${hibernate-validator.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.hsqldb</groupId>
-            <artifactId>hsqldb</artifactId>
-            <version>${hsqldb.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb.version}</version>
+		</dependency>
 
-        <!-- Google Guava -->
-        <dependency>
-            <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
-        </dependency>
+		<!-- Google Guava -->
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>${guava.version}</version>
+		</dependency>
 
-        <!-- JSTL -->
-        <dependency>
-            <groupId>jstl</groupId>
-            <artifactId>jstl</artifactId>
-            <version>${jstl.version}</version>
-        </dependency>
+		<!-- JSTL -->
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>${jstl.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>commons-dbcp</groupId>
-            <artifactId>commons-dbcp</artifactId>
-            <version>${commons-dbcp.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
 
-        <!-- PostgreSQL-->
-        <dependency>
-            <groupId>postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>${postgresql.version}</version>
-        </dependency>
+		<!-- PostgreSQL-->
+		<dependency>
+			<groupId>postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>${postgresql.version}</version>
+		</dependency>
 
-        <!-- Apache Tiles -->
-        <dependency>
-            <groupId>org.apache.tiles</groupId>
-            <artifactId>tiles-core</artifactId>
-            <version>${apache.tiles.version}</version>
-        </dependency>
+		<!-- Apache Tiles -->
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-core</artifactId>
+			<version>${apache.tiles.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.tiles</groupId>
-            <artifactId>tiles-jsp</artifactId>
-            <version>${apache.tiles.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.tiles</groupId>
+			<artifactId>tiles-jsp</artifactId>
+			<version>${apache.tiles.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>javax.servlet</groupId>
-            <artifactId>javax.servlet-api</artifactId>
-            <version>${javax.servlet-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>${javax.servlet-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>javax.servlet.jsp</groupId>
-            <artifactId>javax.servlet.jsp-api</artifactId>
-            <version>${javax.servlet.jsp-api.version}</version>
-            <scope>provided</scope>
-        </dependency>
+		<dependency>
+			<groupId>javax.servlet.jsp</groupId>
+			<artifactId>javax.servlet.jsp-api</artifactId>
+			<version>${javax.servlet.jsp-api.version}</version>
+			<scope>provided</scope>
+		</dependency>
 
-        <!-- JavaEmail -->
-        <dependency>
-            <groupId>org.apache.geronimo.javamail</groupId>
-            <artifactId>geronimo-javamail_1.4_mail</artifactId>
-            <version>1.8.1</version>
-        </dependency>
+		<!-- JavaEmail -->
+		<dependency>
+			<groupId>org.apache.geronimo.javamail</groupId>
+			<artifactId>geronimo-javamail_1.4_mail</artifactId>
+			<version>1.8.1</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.apache.geronimo.specs</groupId>
-            <artifactId>geronimo-activation_1.1_spec</artifactId>
-            <version>1.1</version>
-        </dependency>
+		<dependency>
+			<groupId>org.apache.geronimo.specs</groupId>
+			<artifactId>geronimo-activation_1.1_spec</artifactId>
+			<version>1.1</version>
+		</dependency>
 
-        <!-- Logging -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
+		<!-- Logging -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j.version}</version>
+		</dependency>
 
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
-        </dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
 
-        <!-- Testing -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<!-- Testing -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.hamcrest</groupId>
-            <artifactId>hamcrest-all</artifactId>
-            <version>${hamcrest-all.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.hamcrest</groupId>
+			<artifactId>hamcrest-all</artifactId>
+			<version>${hamcrest-all.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>org.kubek2k</groupId>
-            <artifactId>springockito-annotations</artifactId>
-            <version>${springockito-annotations.version}</version>
-            <scope>test</scope>
-        </dependency>
+		<dependency>
+			<groupId>org.kubek2k</groupId>
+			<artifactId>springockito-annotations</artifactId>
+			<version>${springockito-annotations.version}</version>
+			<scope>test</scope>
+		</dependency>
 
-        <dependency>
-            <groupId>com.jayway.jsonpath</groupId>
-            <artifactId>json-path</artifactId>
-            <version>${json-path.version}</version>
-            <scope>test</scope>
-        </dependency>
-    </dependencies>
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>${json-path.version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
 
-    <build>
-        <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>${maven-compiler-plugin.version}</version>
-                    <configuration>
-                        <source>${java.source}</source>
-                        <target>${java.target}</target>
-                    </configuration>
-                </plugin>
-            </plugins>
-        </pluginManagement>
-    </build>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>${java.source}</source>
+					<target>${java.target}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 
 </project>

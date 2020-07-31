@@ -2,11 +2,12 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" blockDefault="#all" version="1.0">
 	<xs:annotation>
 		<xs:documentation>XML Schema for RSS v2.0 feed files.
-		Revision: 2
-		Date: 31-March-2003
-		Based on the RSS 2.0 specification document at http://feeds.archive.org/validator/docs/rss2.html
-		Author: Jorgen Thelin
-		Feedback to: http://www.thearchitect.co.uk/weblog/archives/2003/03/000118.html</xs:documentation>
+			Revision: 2
+			Date: 31-March-2003
+			Based on the RSS 2.0 specification document at http://feeds.archive.org/validator/docs/rss2.html
+			Author: Jorgen Thelin
+			Feedback to: http://www.thearchitect.co.uk/weblog/archives/2003/03/000118.html
+		</xs:documentation>
 	</xs:annotation>
 	<xs:element name="rss" type="tRss"/>
 	<xs:complexType name="tRss">
@@ -19,7 +20,10 @@
 	</xs:complexType>
 	<xs:complexType name="tRssItem">
 		<xs:annotation>
-			<xs:documentation>An item may represent a "story" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be omitted.</xs:documentation>
+			<xs:documentation>An item may represent a "story" -- much like a story in a newspaper or magazine; if so its description is a synopsis of the story, and the link points
+				to the full story. An item may also be complete in itself, if so, the description contains the text (entity-encoded HTML is allowed), and the link and title may be
+				omitted.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="title" type="xs:string" minOccurs="0">
@@ -37,10 +41,10 @@
 					<xs:documentation>The URL of the item.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-	
+
 			<xs:element name="category" type="tCategory" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Includes the item in one or more categories. </xs:documentation>
+					<xs:documentation>Includes the item in one or more categories.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="comments" type="xs:anyURI" minOccurs="0">
@@ -50,7 +54,7 @@
 			</xs:element>
 			<xs:element name="enclosure" type="tEnclosure" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Describes a media object that is attached to the item. </xs:documentation>
+					<xs:documentation>Describes a media object that is attached to the item.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="guid" type="tGuid" minOccurs="0">
@@ -76,7 +80,9 @@
 		<xs:sequence>
 			<xs:element name="title" type="xs:string">
 				<xs:annotation>
-					<xs:documentation>The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS file, the title of your channel should be the same as the title of your website.</xs:documentation>
+					<xs:documentation>The name of the channel. It's how people refer to your service. If you have an HTML website that contains the same information as your RSS
+						file, the title of your channel should be the same as the title of your website.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="link" type="xs:anyURI">
@@ -91,7 +97,9 @@
 			</xs:element>
 			<xs:element name="language" type="xs:language" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.</xs:documentation>
+					<xs:documentation>The language the channel is written in. This allows aggregators to group all Italian language sites, for example, on a single page. A list of
+						allowable values for this element, as provided by Netscape, is here. You may also use values defined by the W3C.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="copyright" type="xs:string" minOccurs="0">
@@ -99,11 +107,13 @@
 					<xs:documentation>Copyright notice for content in the channel.</xs:documentation>
 				</xs:annotation>
 			</xs:element>
-	
-	
+
+
 			<xs:element name="pubDate" type="tRfc822FormatDate" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the exception that the year may be expressed with two characters or four characters (four preferred).</xs:documentation>
+					<xs:documentation>The publication date for the content in the channel. All date-times in RSS conform to the Date and Time Specification of RFC 822, with the
+						exception that the year may be expressed with two characters or four characters (four preferred).
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="lastBuildDate" type="tRfc822FormatDate" minOccurs="0">
@@ -123,17 +133,22 @@
 			</xs:element>
 			<xs:element name="docs" type="xs:anyURI" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might stumble across an RSS file on a Web server 25 years from now and wonder what it is.</xs:documentation>
+					<xs:documentation>A URL that points to the documentation for the format used in the RSS file. It's probably a pointer to this page. It's for people who might
+						stumble across an RSS file on a Web server 25 years from now and wonder what it is.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="cloud" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.</xs:documentation>
+					<xs:documentation>Allows processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for
+						RSS feeds.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="ttl" type="xs:nonNegativeInteger" minOccurs="0">
 				<xs:annotation>
-					<xs:documentation>ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.</xs:documentation>
+					<xs:documentation>ttl stands for time to live. It's a number of minutes that indicates how long a channel can be cached before refreshing from the source.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="image" type="tImage" minOccurs="0">
@@ -182,7 +197,9 @@
 			</xs:element>
 			<xs:element name="link" type="xs:anyURI">
 				<xs:annotation>
-					<xs:documentation>The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image &lt;title&gt; and &lt;link&gt; should have the same value as the channel's &lt;title&gt; and &lt;link&gt;. </xs:documentation>
+					<xs:documentation>The URL of the site, when the channel is rendered, the image is a link to the site. (Note, in practice the image &lt;title&gt; and &lt;link&gt;
+						should have the same value as the channel's &lt;title&gt; and &lt;link&gt;.
+					</xs:documentation>
 				</xs:annotation>
 			</xs:element>
 			<xs:element name="width" type="tImageWidth" default="88" minOccurs="0">
@@ -220,8 +237,10 @@
 	</xs:simpleType>
 	<xs:complexType name="tCloud">
 		<xs:annotation>
-			<xs:documentation>Specifies a web service that supports the rssCloud interface which can be implemented in HTTP-POST, XML-RPC or SOAP 1.1. 
-Its purpose is to allow processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS feeds.</xs:documentation>
+			<xs:documentation>Specifies a web service that supports the rssCloud interface which can be implemented in HTTP-POST, XML-RPC or SOAP 1.1.
+				Its purpose is to allow processes to register with a cloud to be notified of updates to the channel, implementing a lightweight publish-subscribe protocol for RSS
+				feeds.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:attribute name="domain" type="xs:string" use="required"/>
 		<xs:attribute name="port" type="xs:positiveInteger" use="required"/>
@@ -238,7 +257,9 @@ Its purpose is to allow processes to register with a cloud to be notified of upd
 	</xs:simpleType>
 	<xs:complexType name="tTextInput">
 		<xs:annotation>
-			<xs:documentation>The purpose of this element is something of a mystery! You can use it to specify a search engine box. Or to allow a reader to provide feedback. Most aggregators ignore it.</xs:documentation>
+			<xs:documentation>The purpose of this element is something of a mystery! You can use it to specify a search engine box. Or to allow a reader to provide feedback. Most
+				aggregators ignore it.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:sequence>
 			<xs:element name="title" type="xs:string">
@@ -263,7 +284,7 @@ Its purpose is to allow processes to register with a cloud to be notified of upd
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
-	
+
 	<xs:simpleType name="tRfc822FormatDate">
 		<xs:annotation>
 			<xs:documentation>A date-time displayed in RFC-822 format.</xs:documentation>

@@ -1,8 +1,8 @@
 package pl.dmichalski.rss.core.service;
 
-import pl.dmichalski.rss.core.entity.UserEntity;
-
 import java.util.List;
+
+import pl.dmichalski.rss.core.entity.UserEntity;
 
 /**
  * Author: Daniel

@@ -1,5 +1,7 @@
 package pl.dmichalski.rss.core.service.impl;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -16,8 +18,6 @@ import pl.dmichalski.rss.core.repository.ItemRepository;
 import pl.dmichalski.rss.core.repository.UserRepository;
 import pl.dmichalski.rss.core.service.IRssFeedService;
 import pl.dmichalski.rss.core.util.log.AutowiredLogger;
-
-import java.util.List;
 
 /**
  * Author: Daniel
