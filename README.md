@@ -52,7 +52,7 @@ password: secret
 Video
 -----
 
-[![Spring Web RSS Channels](http://img.youtube.com/vi/5fvERzlhdZU/0.jpg)](http://www.youtube.com/watch?v=5fvERzlhdZU "Spring Web RSS Channels")
+[![Spring Web RSS Channels](http://img.youtube.com/vi/5v8eZnM4ojU/0.jpg)](https://youtu.be/5v8eZnM4ojU "Spring Web RSS Channels")
 
 Screens
 ---------------------------------------------
