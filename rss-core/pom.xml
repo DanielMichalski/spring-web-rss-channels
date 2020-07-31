@@ -8,7 +8,7 @@
 
     <parent>
         <groupId>pl.dmichalski</groupId>
-        <artifactId>rss</artifactId>
+        <artifactId>spring-web-rss-channels</artifactId>
         <version>1.0</version>
     </parent>
 
