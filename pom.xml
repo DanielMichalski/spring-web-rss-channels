@@ -7,7 +7,7 @@
 
 	<groupId>pl.dmichalski</groupId>
 	<artifactId>spring-web-rss-channels</artifactId>
-	<version>1.0</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<name>Spring RSS Reader</name>
 	<packaging>pom</packaging>
 
