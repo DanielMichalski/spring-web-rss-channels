@@ -5,9 +5,20 @@ Spring Web RSS Channels
 
 This project aims to present how to create a Spring MVC + JPA/Hibernate Web application.
 
-Libraries
----------------------------------------------
+## Table of Contents
+* [Prerequisites](#prerequisites)
+* [Libraries](#Libraries)
+* [Running the application](#running-the-application)
+    * [On Windows](#on-windows)
+    * [On MacOS/ Linux](#on-macos-linux)
+* [Application user](#application-user)
+* [Video](#video)
+* [Screens](#screens)
 
+## Prerequisites
+- [Java JDK 8](https://www.oracle.com/pl/java/technologies/javase/javase-jdk8-downloads.html)
+
+## Libraries
 | Library name                                        | Description                                                                                                                                                         |
 |-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Spring](https://spring.io/)                        | Spring makes programming Java quicker, easier, and safer for everybody.                                                                                             |
@@ -18,13 +29,8 @@ Libraries
 | [JQuery validator](https://jqueryvalidation.org/)   |  Validate forms like you've never validated before!                                                                                                                 |
 | [Java Mail API](https://javaee.github.io/javamail/) | The JavaMail API provides a platform-independent and protocol-independent framework to build mail and messaging applications.                                       |
 
-Requirements
----------------------------------------------
-- [Java JDK 8](https://www.oracle.com/pl/java/technologies/javase/javase-jdk8-downloads.html)
-
-How to run application
----------------------------------------------
-On Windows
+## Running the application
+#### On Windows
 ```bash
 ## Build application from base directory using Maven Wrapper
 mvnw.cmd clean install
@@ -36,7 +42,7 @@ mvnw.cmd tomcat7:run-war -pl rss-web
 http://localhost:8081/rss-web/
 ```
 
-On MacOS/ Linux
+#### On MacOS/ Linux
 ```bash
 ## Build application from base directory using Maven Wrapper
 ./mvnw clean install
@@ -48,21 +54,16 @@ On MacOS/ Linux
 http://localhost:8081/rss-web/
 ```
 
-Application user
----------------
+## Application user
 ```
 login: admin
 password: secret
 ```
 
-Video
------
-
+## Video
 [![Spring Web RSS Channels](http://img.youtube.com/vi/5v8eZnM4ojU/0.jpg)](https://youtu.be/5v8eZnM4ojU "Spring Web RSS Channels")
 
-Screens
----------------------------------------------
-
+## Screens
 ![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen1.png "Screen 1")
 
 ![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen2.png "Screen 2")
