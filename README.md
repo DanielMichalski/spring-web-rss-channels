@@ -7,13 +7,16 @@ This project aims to present how to create a Spring MVC + JPA/Hibernate Web appl
 
 Libraries
 ---------------------------------------------
-- Spring Security and Data Repositories
-- JPA (Hibernate)
-- Twitter Bootstrap
-- Apache Tiles
-- JQuery + Ajax
-- JQuery validator
-- Java Mail API
+
+| Library name                                        | Description                                                                                                                                                         |
+|-----------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Spring](https://spring.io/)                        | Spring makes programming Java quicker, easier, and safer for everybody.                                                                                             |
+| [JPA (Hibernate)](https://hibernate.org/)           | Hibernate ORM enables developers to more easily write applications whose data outlives the application process.                                                     |
+| [Twitter Bootstrap](https://getbootstrap.com/)      | Quickly design and customize responsive mobile-first sites with Bootstrap.                                                                                          |
+| [Apache Tiles](https://tiles.apache.org/)           | A free open-sourced templating framework for modern Java applications. Based upon the Composite pattern it is built to simplify the development of user interfaces. |
+| [jQuery + Ajax](https://jquery.com/)                | jQuery is a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling and animation.          |
+| [JQuery validator](https://jqueryvalidation.org/)   |  Validate forms like you've never validated before!                                                                                                                 |
+| [Java Mail API](https://javaee.github.io/javamail/) | The JavaMail API provides a platform-independent and protocol-independent framework to build mail and messaging applications.                                       |
 
 Requirements
 ---------------------------------------------
