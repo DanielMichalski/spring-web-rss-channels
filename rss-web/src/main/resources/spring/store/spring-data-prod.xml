@@ -10,7 +10,7 @@
                 http://www.springframework.org/schema/data/jpa
                 http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
-    <jpa:repositories base-package="pl.dmichalski.rss.core.repository"/>
+    <jpa:repositories base-package="com.danielmichalski.rss.core.repository"/>
 
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="org.postgresql.Driver" />
@@ -20,7 +20,7 @@
     </bean>
 
     <bean id="entityManagerFactory" class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
-        <property name="packagesToScan" value="pl.dmichalski.rss.core.entity"/>
+        <property name="packagesToScan" value="com.danielmichalski.rss.core.entity"/>
         <property name="dataSource" ref="dataSource"/>
         <property name="persistenceProvider">
             <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
