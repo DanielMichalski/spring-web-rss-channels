@@ -1,9 +1,13 @@
 Spring Web RSS Channels
 ---------------------------------------------
+
+Spring Web RSS Channels is a RSS feed reader web application built on Spring, JPA (Hibernate), Twitter Bootstrap, Apache tiles and JQuery. \
+It allows you to specify RSS channels and then display results.
+
+[![Spring Web RSS Channels](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/.github/gifs/application.gif)](https://youtu.be/5v8eZnM4ojU "Spring Web RSS Channels")
+
 [![Build Status](https://github.com/DanielMichalski/spring-web-rss-channels/workflows/Java%20CI%20with%20Maven/badge.svg?branch=master)](https://github.com/DanielMichalski/spring-web-rss-channels/actions?query=workflow%3A%22Java+CI+with+Maven%22)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/LICENSE)
-
-This project aims to present how to create a Spring MVC + JPA/Hibernate Web application.
 
 ## Table of Contents
 * [Prerequisites](#prerequisites)
@@ -60,10 +64,10 @@ login: admin
 password: secret
 ```
 
-## Video
+## Video presentation
 [![Spring Web RSS Channels](http://img.youtube.com/vi/5v8eZnM4ojU/0.jpg)](https://youtu.be/5v8eZnM4ojU "Spring Web RSS Channels")
 
-## Screens
+## Screenshots
 ![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen1.png "Screen 1")
 
 ![alt text](https://github.com/DanielMichalski/spring-web-rss-channels/blob/master/rss-web/src/main/resources/img/screen2.png "Screen 2")
